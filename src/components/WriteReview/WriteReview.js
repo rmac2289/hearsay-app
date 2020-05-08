@@ -1,7 +1,7 @@
 import React from 'react'
 import './WriteReview.css'
-import Nav from './Nav'
-import Footer from './Footer'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 
 
 export default function WriteReview() {

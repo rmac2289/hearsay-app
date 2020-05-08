@@ -1,7 +1,7 @@
 import React from 'react'
-import STORE from './STORE'
-import Nav from './Nav'
-import Footer from './Footer'
+import STORE from '../../STORE'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 
 export default function Review(props){
     return(

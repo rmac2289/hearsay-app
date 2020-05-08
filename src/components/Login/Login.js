@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from './Nav'
+import Nav from '../Nav/Nav'
 import './Login.css'
-import Footer from './Footer'
+import Footer from '../Footer/Footer'
 
 export default function Login(props){
     return(

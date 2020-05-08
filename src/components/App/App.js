@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-import Landing from './Landing'
-import Login from './Login'
-import WriteReview from './WriteReview'
-import Review from './Review'
-import Chat from './Chat'
+import Landing from '../Landing/Landing'
+import Login from '../Login/Login'
+import WriteReview from '../WriteReview/WriteReview'
+import Review from '../Review/Review'
+import Chat from '../Chat/Chat'
 
 function App() {
   return (
