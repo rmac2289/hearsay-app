@@ -1,0 +1,8 @@
+.citySearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#communityButton {
+    margin-top:10px;
+}

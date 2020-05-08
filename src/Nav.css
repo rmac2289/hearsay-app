@@ -1,0 +1,15 @@
+.navLink {
+    margin-right: 10px;
+    color: ivory;
+
+}
+nav {
+  padding: 1% 0;
+  background-color: rgb(0,0,0,0.8);
+ 
+}
+nav > ul {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+}

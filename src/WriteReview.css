@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Open Sans",
+    sans-serif;
+    font-size: 20px;
+    text-align: left;
+    line-height: 1.5;
+   
+  }
+  #banner {
+      text-align: center
+  }
+  
+  .section {
+    min-height: 200px;
+    padding: 30px 15px;
+    background-color: #bbb;
+    margin-bottom: 50px;
+  }
+  
+  .reviewP {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+  
+  .reviewP + .reviewP {
+    margin-top: 15px;
+  }
+  
+ .reviewForm {
+    text-align: left;
+  }
+  
+.reviewInput, .reviewTextarea {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .reviewInput[type="number"] {
+    width: 70px;
+    text-align: center;
+  }
+  
+  .reviewLabel {
+    display: block;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  
