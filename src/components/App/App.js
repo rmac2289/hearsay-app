@@ -4,7 +4,8 @@ import Landing from '../Landing/Landing'
 import Login from '../Login/Login'
 import WriteReview from '../WriteReview/WriteReview'
 import Review from '../Review/Review'
-import Chat from '../Chat/Chat'
+import Forum from '../Forum/Forum'
+import Departments from '../Departments/Departments'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Route exact path='/login' component={Login} />
       <Route exact path='/review' component={WriteReview} />
       <Route exact path='/singlereview' component={Review} />
-      <Route exact path='/chat' component={Chat} />
+      <Route exact path='/chat' component={Forum} />
+      <Route exact path='/departments' component={Departments} />
       
     </main>
   );

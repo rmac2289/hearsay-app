@@ -1,33 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './WriteReview.css'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 
 
-export default function WriteReview() {
+export default function WriteReview(props) {
+    const [setNature, setNatureState] = useState("")
+    const [setComments, setCommentsState] = useState("")
+    const [setRating, setRatingState] = useState("")
+
+    function getNatureText(event){
+        setNatureState(event.target.value)
+    }
+    function getCommentsText(event){
+        setCommentsState(event.target.value)
+    }
+    function getRating(event){
+        setRatingState(event.target.value)
+    }
     return (
         <main>
-            <Nav />
             <header id="banner">
-                <h1>New Review</h1>
+                <h1>New Encounter</h1>
             </header>
             <section className="section">
                 <form className="reviewForm">
+                <div className="form-section">
+                        <label className="reviewLabel" htmlFor="state">State</label>
+                        <input value={props.state} onChange={props.onChangeState} className="reviewInput" type="text" name="state" required />
+                    </div>
                     <div className="form-section">
-                        <label className="reviewLabel" htmlFor="locality">Locality</label>
-                        <input className="reviewInput" type="text" name="locality" placeholder="City/Department" required />
+                        <label className="reviewLabel" htmlFor="department">Department</label>
+                        <input value={props.deptName} onChange={props.onChangeDept} className="reviewInput" type="text" name="department" required />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="nature">Nature of encounter</label>
-                        <textarea className="reviewTextarea" name="nature" rows="5" placeholder="brief explanation of why your interaction occurred" required></textarea>
+                        <textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="5" placeholder="brief explanation of why your interaction occurred" required></textarea>
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="rating">Rating</label>
-                        <input className="reviewInput" type="number" name="rating" placeholder="8" />
+                        <input onChange={getRating} value={setRating} className="reviewInput" type="number" name="rating" placeholder="8" />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="comments">comments</label>
-                        <textarea className="reviewTextarea"  name="comments" rows="15"></textarea>
+                        <textarea onChange={getCommentsText} value={setComments} className="reviewTextarea"  name="comments" rows="15"></textarea>
                     </div>
                     <div className="form-section">
                         <p className="reviewP">how did you feel after your experience?</p>
@@ -68,7 +82,6 @@ export default function WriteReview() {
                     <button type="reset">Reset</button>
                 </form>
             </section>
-            <Footer />
         </main>
     )
 }

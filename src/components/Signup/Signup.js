@@ -20,7 +20,7 @@ export default function Signup(props) {
                 </div>
                 <div className="signupInput">
                     <div>
-                        <input type="text" placeholder="Username" name='username' id='username' />
+                        <input type="text" placeholder="Email" name='email' id='email' />
                     </div>
                 </div>
                 <div className="signupInput">

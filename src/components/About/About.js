@@ -11,7 +11,7 @@ export default function About(props){
                 </header>
                 <p>Hearsay allows you to get your voice out regarding contacts with law enforcement and the criminal justice system.</p>
                 <div className="reviewLink">
-                <h3><Link to='/review'>leave a review</Link></h3>
+                <h3><Link to='/departments'>leave a review</Link></h3>
                 </div>
             </section>
     )

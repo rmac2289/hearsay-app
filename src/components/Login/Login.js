@@ -10,7 +10,7 @@ export default function Login(props){
             <header className="loginHeader">
                 <h2>Log In</h2>
             </header>
-            <section>
+            <section className="loginSection">
             <form className="loginForm">
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username"/>
@@ -19,7 +19,7 @@ export default function Login(props){
                 <button className="loginButton">Submit</button>
             </form>
             </section>
-            <section>
+            <section className="forgot">
                 <h4>Forgot your password or username?</h4>
             </section>
             <Footer />
