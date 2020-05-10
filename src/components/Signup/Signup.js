@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../../Utils/Utils'
+import './Signup.css'
 
 
 export default class RegistrationForm extends Component {
@@ -35,9 +36,9 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-        <section>
+        <section className="signupSection">
             <header className="signupHeader">
-                <h1>sign up & join the conversation</h1>
+                <h1>register & join the conversation</h1>
             </header>
       <form
         className='RegistrationForm'

@@ -17,24 +17,15 @@ form {
 .signupFormSection {
     text-align: center;
 }
-input {
-    width: 175px;
-    font-size: 16px;
-    padding: 1%;
-    border-radius: 3px;
-}
-button {
-    width: 100px;
-    font-size: 16px;
-    height: 30px;
-    border-radius: 10px;
-    background: black;
-    color: white
-}
+
 button:hover {
     cursor: pointer;
     background: rgb(0,0,0,0.6);
     transition: .5s;
+    color: white;
+}
+.signupSection {
+    margin-top: 35px;
 }
 @media only screen and (min-width: 720px){
     input {

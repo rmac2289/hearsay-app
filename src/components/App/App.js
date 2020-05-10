@@ -6,6 +6,7 @@ import WriteReview from '../WriteReview/WriteReview'
 import Review from '../Review/Review'
 import Forum from '../Forum/Forum'
 import Departments from '../Departments/Departments'
+import SignupPage from '../Signup/SignupPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path='/singlereview' component={Review} />
       <Route exact path='/forum' component={Forum} />
       <Route exact path='/departments' component={Departments} />
+      <Route exact path='/signuppage' component={SignupPage} />
       
     </main>
   );

@@ -5,3 +5,6 @@
     color: black;
     text-decoration: none;
 }
+#chatLink:hover {
+    color: white;
+}

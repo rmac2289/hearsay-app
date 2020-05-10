@@ -37,7 +37,7 @@ export default function WriteReview(props) {
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="rating">Rating</label>
-                        <Input onChange={getRating} value={setRating} className="reviewInput" type="number" name="rating" placeholder="8" />
+                        <Input onChange={getRating} min="1" max="10" value={setRating} className="reviewInput" type="number" name="rating" placeholder="8" />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="comments">comments</label>
@@ -48,7 +48,7 @@ export default function WriteReview(props) {
                         <div id="date">
                         <Input className="reviewInput" type="number" name="date-month" placeholder="MM" min="1" max="12" required="" />
                         <Input className="reviewInput date-day" type="number" name="date-day" placeholder="DD" min="1" max="31" required="" />
-                        <Input className="reviewInput date-year" id="date-year" type="number" name="date-year" placeholder="YYYY" min="2016" max="2017" required="" />
+                        <Input className="reviewInput date-year" id="date-year" type="number" name="date-year" placeholder="YYYY" min="2000" max="2020" required="" />
                         </div>
                     </div>
 

@@ -1,21 +1,48 @@
 .navLink {
     margin-right: 10px;
-    color: ivory;
+    color: white;
+    text-decoration: none;
 
+}
+.navLink:hover {
+  color: ivory;
+  text-decoration: underline;
+  transition: .5s;
 }
 nav {
   padding: 1% 0;
   background-color: rgb(0,0,0,0.8);
   border-bottom-right-radius: 30%;
   border-bottom-left-radius: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
  
 }
 nav > ul {
     list-style: none;
     display: flex;
     font-size: 16px;
+    justify-content: space-around;
+    margin-right: 35px;
 }
 #bullhorn {
   height: 20px;
   width: 20px;
+}
+#navLogo {
+  font-family: 'Sacramento', cursive;
+  color: white;
+  font-size: 38px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 50px;
+  padding-bottom: 1%;
+  text-decoration: none;
+
+}
+.navLogo {
+  display: flex;
+  padding: 0;
+  margin: 0;
 }

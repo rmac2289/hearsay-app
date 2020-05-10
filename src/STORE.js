@@ -35,7 +35,8 @@ const STORE = [
             },
             {
             id: 2,
-            locality: "Los Angeles",
+            state: "New York",
+            department: "New York City Police Department",
             nature: "cops stopped me for no reason and just started yelling at me to get on the ground",
             rating: 0,
             comments: "This was some serious BS. They had no right to come at me like that. If I treated them that way they would have killed me.",
@@ -45,7 +46,8 @@ const STORE = [
             },
             {
             id: 3,
-            locality: "Mountain View",
+            state: "New York",
+            department: "New York City Police Department",
             nature: "I dropped my wallet and the officer found me to return it.",
             rating: 10,
             comments: "I can't believe he did that, what a relief. So glad we have people like that protecting our community.",
@@ -115,8 +117,6 @@ const STORE = [
             "Police-Community Relations",
             "Prison System",
             "Racial Profiling",
-            
-
         ]
 
     }
