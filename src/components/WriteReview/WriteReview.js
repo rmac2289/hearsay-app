@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './WriteReview.css'
-
+import { Textarea, Input, Button } from '../../Utils/Utils'
 
 export default function WriteReview(props) {
     const [setNature, setNatureState] = useState("")
@@ -25,61 +25,35 @@ export default function WriteReview(props) {
                 <form className="reviewForm">
                 <div className="form-section">
                         <label className="reviewLabel" htmlFor="state">State</label>
-                        <input value={props.state} onChange={props.onChangeState} className="reviewInput" type="text" name="state" required />
+                        <Input value={props.state} onChange={props.onChangeState} className="reviewInput" type="text" name="state" required />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="department">Department</label>
-                        <input value={props.deptName} onChange={props.onChangeDept} className="reviewInput" type="text" name="department" required />
+                        <Input value={props.deptName} onChange={props.onChangeDept} className="reviewInput" type="text" name="department" required />
                     </div>
                     <div className="form-section">
-                        <label className="reviewLabel" htmlFor="nature">Nature of encounter</label>
-                        <textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="5" placeholder="brief explanation of why your interaction occurred" required></textarea>
+                        <label className="reviewLabel" htmlFor="nature">What led to the encounter?</label>
+                        <Textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="5" required />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="rating">Rating</label>
-                        <input onChange={getRating} value={setRating} className="reviewInput" type="number" name="rating" placeholder="8" />
+                        <Input onChange={getRating} value={setRating} className="reviewInput" type="number" name="rating" placeholder="8" />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="comments">comments</label>
-                        <textarea onChange={getCommentsText} value={setComments} className="reviewTextarea"  name="comments" rows="15"></textarea>
+                        <Textarea onChange={getCommentsText} value={setComments} className="reviewTextarea"  name="comments" rows="15" />
                     </div>
                     <div className="form-section">
-                        <p className="reviewP">how did you feel after your experience?</p>
-                        <input className="reviewInput" type="radio" name="terrible" value="0" />
-                        <label className="reviewLabel" htmlFor="terrible">
-                            <div>They had no right to treat me that way. Unacceptable.</div>
-                        </label>
-
-                        <input className="reviewInput" type="radio" name="bad" value="1" />
-                        <label className="reviewLabel" htmlFor="bad">
-                            <div>That was disrespectful. I was treated poorly.</div>
-                        </label>
-
-                        <input className="reviewInput" type="radio" name="ok" value="2" />
-                        <label className="reviewLabel" htmlFor="ok">
-                            <div>No major complaints, but nothing good to say either.</div>
-                        </label>
-
-                        <input className="reviewInput" type="radio" name="good" value="3" />
-                        <label className="reviewLabel"  htmlFor="good">
-                            <div>That was a pretty good experience - I got the help I needed.</div>
-                        </label>
-
-                        <input type="radio" name="great" value="4" />
-                        <label className="reviewLabel" htmlFor="great">
-                            <div>They went above and beyond to see that I got the help I needed.</div>
-                        </label>
+                        <p className="reviewP">When did this happen?</p>
+                        <div id="date">
+                        <Input className="reviewInput" type="number" name="date-month" placeholder="MM" min="1" max="12" required="" />
+                        <Input className="reviewInput date-day" type="number" name="date-day" placeholder="DD" min="1" max="31" required="" />
+                        <Input className="reviewInput date-year" id="date-year" type="number" name="date-year" placeholder="YYYY" min="2016" max="2017" required="" />
+                        </div>
                     </div>
 
-                    <div className="form-section">
-                        <p className="reviewP">Date of Encounter</p>
-                        <input className="reviewInput" type="number" name="date-month" placeholder="MM" min="1" max="12" required="" />
-                        <input className="reviewInput date-day" type="number" name="date-day" placeholder="DD" min="1" max="31" required="" />
-                        <input className="reviewInput date-year" type="number" name="date-year" placeholder="YYYY" min="2016" max="2017" required="" />
-                    </div>
-
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
+                    <Button id="reviewSubmit" type="submit">Submit</Button>
+                    <Button type="reset">Reset</Button>
                 </form>
             </section>
         </main>

@@ -6,3 +6,7 @@
 #communityButton {
     margin-top:10px;
 }
+#communityLink {
+    color: black;
+    text-decoration: none;
+}

@@ -14,7 +14,7 @@ function App() {
       <Route exact path='/login' component={Login} />
       <Route exact path='/review' component={WriteReview} />
       <Route exact path='/singlereview' component={Review} />
-      <Route exact path='/chat' component={Forum} />
+      <Route exact path='/forum' component={Forum} />
       <Route exact path='/departments' component={Departments} />
       
     </main>

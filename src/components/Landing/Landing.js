@@ -14,7 +14,7 @@ import About from '../About/About'
 export default function Landing(props) {
 
     return (
-        <div>
+        <div className="mainDiv">
             <Nav />
             <Header />
         <div className="landingContainer">

@@ -1,17 +1,18 @@
 import React from 'react'
 import './Conversation.css'
 import { Link } from 'react-router-dom'
+import { Button } from '../../Utils/Utils'
 
 
 export default function Conversation(props){
     return (
-        <section>
+        <section className="conversationSection">
                 <header>
-                    <h3>Keep the conversation going</h3>
+                    <h1>keep the conversation going</h1>
                 </header>
                 <p>Talk with your peers about what is working, what isn't, and what needs improvement.</p>
                 <div className="buttonDiv">
-                <button><Link id="chatLink" to='/chat'>chat</Link></button>
+                <Button><Link id="chatLink" to='/forum'>forum</Link></Button>
                 </div>
             </section>
     )

@@ -1,28 +1,91 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Button, Input } from '../../Utils/Utils'
 import Nav from '../Nav/Nav'
-import './Login.css'
 import Footer from '../Footer/Footer'
+import './Login.css'
 
-export default function Login(props){
-    return(
-        <div>
-            <Nav />
-            <header className="loginHeader">
-                <h2>Log In</h2>
-            </header>
-            <section className="loginSection">
-            <form className="loginForm">
-                <label htmlFor="username">Username</label>
-                <input type="text" id="username"/>
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password"/>
-                <button className="loginButton">Submit</button>
-            </form>
-            </section>
-            <section className="forgot">
-                <h4>Forgot your password or username?</h4>
-            </section>
-            <Footer />
-        </div>
+export default class LoginForm extends Component {
+  static defaultProps = {
+    onLoginSuccess: () => {}
+  }
+
+  state = { error: null }
+
+  /* handleSubmitBasicAuth = ev => {
+    ev.preventDefault()
+    const { user_name, password } = ev.target
+
+    TokenService.saveAuthToken(
+      TokenService.makeBasicAuthToken(user_name.value, password.value)
     )
+
+    user_name.value = ''
+    password.value = ''
+    this.props.onLoginSuccess()
+  }
+
+  handleSubmitJwtAuth = ev => {
+      ev.preventDefault()
+      this.setState({ error: null })
+      const { user_name, password } = ev.target
+    
+      AuthApiService.postLogin({
+        user_name: user_name.value,
+        password: password.value,
+      })
+        .then(res => {
+          user_name.value = ''
+          password.value = ''
+          TokenService.saveAuthToken(res.authToken)
+          this.props.onLoginSuccess()
+        })
+        .catch(res => {
+          this.setState({ error: res.error })
+        })
+    }
+*/
+  render() {
+    const { error } = this.state
+    return (
+        <>
+        <Nav />
+        <section className="forgot">
+      <form
+        className='LoginForm'
+        onSubmit={this.handleSubmitJwtAuth}
+      >
+        <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
+        <div className='user_name'>
+          <label htmlFor='LoginForm__user_name'>
+            User name
+          </label>
+          <Input
+            required
+            name='user_name'
+            id='LoginForm__user_name'>
+          </Input>
+        </div>
+        <div className='password'>
+          <label htmlFor='LoginForm__password'>
+            Password
+          </label>
+          <Input
+            required
+            name='password'
+            type='password'
+            id='LoginForm__password'>
+          </Input>
+        </div>
+        <Button type='submit'>
+          Login
+        </Button>
+        <h4>Forgot username or password?</h4>
+      </form>
+      </section>
+      <Footer />
+      </>
+    )
+  }
 }

@@ -17,8 +17,8 @@ export default function Departments(props){
         setDeptSelectState(event.target.value)
     }
     const writeOrLook = (<div className="selectLinks">
-        <div><Link to='/'>show me reviews</Link></div>
-        <div><Link to='/'>write a review</Link></div>
+        <div><Link className="departmentLink" to='/singlereview'>show me reviews</Link></div>
+        <div><Link className="departmentLink" to='/'>write a review</Link></div>
         </div>)
 
     const states = Object.keys(Agencies.States)
@@ -30,7 +30,7 @@ export default function Departments(props){
         <div>
             <Nav />
             <header className="departmentsHeader">
-                <h2>find the law enforcement agency</h2>
+                <h2>find law enforcement agency</h2>
             </header>
             <section className="departmentsSection">
                 <p>pick your state, then choose the department from the list</p>

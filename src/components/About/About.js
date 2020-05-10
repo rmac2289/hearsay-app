@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './About.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function About(props){
     return (
         <section>
                 <header>
-                    <h3>Make your voice heard</h3>
+                    <h2>make your voice heard <span><FontAwesomeIcon id="bigbullhorn" icon={faBullhorn}/></span></h2>
                 </header>
-                <p>Hearsay allows you to get your voice out regarding contacts with law enforcement and the criminal justice system.</p>
+                <p>Hearsay allows you to get your voice out regarding contacts with law enforcement and the criminal justice system. This isn't simply a place to complain - no matter the nature of the experience; good, bad, ugly - this is the place to make yourself heard. If you're already signed up, click below to leave a review - if not, scroll down and get yourself signed up!</p>
                 <div className="reviewLink">
-                <h3><Link to='/departments'>leave a review</Link></h3>
+                <h3><Link id="aboutLink" to='/departments'>rate your encounter</Link></h3>
                 </div>
             </section>
     )

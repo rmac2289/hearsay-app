@@ -24,7 +24,8 @@ const STORE = [
         
             {
             id: 1,
-            locality: "New York City",
+            state: "New York",
+            department: "New York Police Department",
             nature: "I got pulled over for speeding",
             rating: 7,
             comments: "The officer was pretty respectful. He told me what I did wrong when I asked him. Only giving a 7 because the ticket is expensive.",
@@ -102,6 +103,20 @@ const STORE = [
             encounterDate: new Date('February 11, 2020 16:30:00'),
             user: "surfinusa"
             }
+        ],
+        forum_categories: [
+            "Criminal Justice Reform",
+            "Police Brutality",
+            "Drug Crimes",
+            "What the System is Doing Well",
+            "Capital Punishment",
+            "Crime Prevention",
+            "Juvenile Justice",
+            "Police-Community Relations",
+            "Prison System",
+            "Racial Profiling",
+            
+
         ]
 
     }

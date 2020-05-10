@@ -4,6 +4,9 @@
 .departmentsSection {
     margin-bottom: 50px;
 }
+.departmentLink {
+	color: white;
+}
 
 .select {
     margin-bottom: 20px;

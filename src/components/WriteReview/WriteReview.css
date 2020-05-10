@@ -13,16 +13,16 @@
   #banner {
       text-align: center
   }
-  
+  #date-year {
+    width: 90px;
+  }
   .section {
     min-height: 200px;
     padding: 30px 15px;
-    background-color: #bbb;
     margin-bottom: 50px;
   }
   
   .reviewP {
-    margin: 0 auto;
     max-width: 650px;
   }
   
@@ -40,8 +40,8 @@
   }
   
   .reviewInput[type="number"] {
-    width: 70px;
-    text-align: center;
+    width: 75px;
+    margin-right: 5px;
   }
   
   .reviewLabel {
@@ -50,6 +50,13 @@
   
   .form-section {
     margin-bottom: 30px;
+  }
+  #date {
+    display: flex;
+    
+  }
+  #reviewSubmit {
+    margin-right: 20px;
   }
   
   
