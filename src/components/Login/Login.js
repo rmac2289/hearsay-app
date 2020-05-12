@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 import './Login.css'
 
 export default class LoginForm extends Component {
@@ -47,8 +45,6 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
-        <>
-        <Nav />
         <section className="forgot">
       <form
         className='LoginForm'
@@ -59,7 +55,7 @@ export default class LoginForm extends Component {
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>
-            User name
+            Username
           </label>
           <Input
             required
@@ -84,8 +80,6 @@ export default class LoginForm extends Component {
         <h4>Forgot username or password?</h4>
       </form>
       </section>
-      <Footer />
-      </>
     )
   }
 }

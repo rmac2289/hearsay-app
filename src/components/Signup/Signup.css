@@ -10,14 +10,9 @@
     margin-bottom: 5px;
     font-size: 18px; 
 }
-
-form {
+#buttonDiv {
     text-align: center;
 }
-.signupFormSection {
-    text-align: center;
-}
-
 button:hover {
     cursor: pointer;
     background: rgb(0,0,0,0.6);
@@ -26,6 +21,7 @@ button:hover {
 }
 .signupSection {
     margin-top: 35px;
+    width: 75%;
 }
 @media only screen and (min-width: 720px){
     input {

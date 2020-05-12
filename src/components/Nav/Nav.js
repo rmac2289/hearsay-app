@@ -7,7 +7,7 @@ import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 export default function Nav(props){
     return (
         <nav>
-            <h5 ><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
+            <h5 id="linkLogo"><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
             <ul>
                 <li><Link className="navLink" to='/login' onClick={props.login}>Login</Link></li>
                 <li><Link className="navLink" to='/signuppage'>Register</Link></li>

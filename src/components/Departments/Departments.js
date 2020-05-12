@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Departments.css'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 import Agencies from '../../Agencies'
 import WriteReview from '../WriteReview/WriteReview'
 
@@ -28,7 +26,6 @@ export default function Departments(props){
     const depts = Agencies.States[setSelect]
     return (        
         <div>
-            <Nav />
             <header className="departmentsHeader">
                 <h2>find law enforcement agency</h2>
             </header>
@@ -47,7 +44,6 @@ export default function Departments(props){
                 {setDeptSelect !== '' && writeOrLook}
                 </section>
             {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <WriteReview onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/>}
-            <Footer />
         </div>
     )
 }

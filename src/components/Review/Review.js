@@ -1,13 +1,10 @@
 import React from 'react'
 import STORE from '../../STORE'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 import './Review.css'
 
 export default function Review(props){
     return(
         <div>
-            <Nav />
             <header className="reviewHeader">
                 <h1>Reviews</h1>
             </header>
@@ -38,7 +35,6 @@ export default function Review(props){
             <p><strong>Comments:</strong> {STORE[0].reviews[2].comments}</p>
             <p><strong>User:</strong> {STORE[0].reviews[2].user}</p>
             </section>
-            <Footer/>
         </div>
     )
 }

@@ -19,7 +19,6 @@ section {
 button:hover {
     cursor: pointer;
     background: rgb(0,0,0,0.6);
-    transition: .5s;
     color: white;
 }
 .violence {

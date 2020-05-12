@@ -2,7 +2,8 @@
     text-align: center;
 }
 .departmentsSection {
-    margin-bottom: 50px;
+	margin-bottom: 50px;
+	width: 75%;
 }
 .departmentLink {
 	color: white;

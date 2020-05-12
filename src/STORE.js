@@ -3,7 +3,7 @@ const STORE = [
         departments: [
             "Mountain View Police Department",
             "Marin County Sheriff's Office",
-            "New York Police Department",
+            "New York City Police Department",
             "Los Angeles Police Department",
             "San Francisco Police Department",
             "San Diego Police Department",
