@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
 import './Login.css'
+import TokenService from '../../services/token-service'
+/* import AuthApiService from '../../services/auth-api-service' */
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -9,7 +11,7 @@ export default class LoginForm extends Component {
 
   state = { error: null }
 
-  /* handleSubmitBasicAuth = ev => {
+  handleSubmitBasicAuth = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
 
@@ -22,7 +24,7 @@ export default class LoginForm extends Component {
     this.props.onLoginSuccess()
   }
 
-  handleSubmitJwtAuth = ev => {
+  /* handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       this.setState({ error: null })
       const { user_name, password } = ev.target
@@ -40,15 +42,15 @@ export default class LoginForm extends Component {
         .catch(res => {
           this.setState({ error: res.error })
         })
-    }
-*/
+    } */
+
   render() {
     const { error } = this.state
     return (
         <section className="forgot">
       <form
         className='LoginForm'
-        onSubmit={this.handleSubmitJwtAuth}
+        onSubmit={this.handleSubmitBasicAuth}
       >
         <div role='alert'>
           {error && <p className='red'>{error}</p>}

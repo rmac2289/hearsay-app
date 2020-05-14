@@ -6,7 +6,7 @@ export const nullDiscussion = {
 }
 
 const DiscussionContext = React.createContext({
-  Discussion: nullDiscussion,
+  discussion: nullDiscussion,
   comments: [],
   error: null,
   setError: () => {},

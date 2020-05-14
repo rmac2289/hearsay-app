@@ -38,7 +38,7 @@ const DiscussionApiService = {
       )
   },
   postComment(discussionId, text) {
-    return fetch(`${config.API_ENDPOINT}/comments`, {
+    return fetch(`${config.API_ENDPOINT}/discussions`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -47,6 +47,51 @@ const DiscussionApiService = {
       body: JSON.stringify({
         discussion_id: discussionId,
         text,
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+  getReviews(){
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
+      headers: {
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+  getReview(reviewId){
+    return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
+      headers: {
+        'authorization': `basic ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+  postReview(state, department, nature, rating, comments, incident_date ){
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `basic ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({
+        state,
+        department,
+        nature,
+        rating,
+        comments,
+        incident_date
       }),
     })
       .then(res =>

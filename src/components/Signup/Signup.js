@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../../Utils/Utils'
 import './Signup.css'
+import AuthApiService from '../../services/auth-api-service'
 
 
 export default class RegistrationForm extends Component {
@@ -10,7 +11,7 @@ export default class RegistrationForm extends Component {
 
   state = { error: null }
 
-  /*handleSubmit = ev => {
+  handleSubmit = ev => {
     ev.preventDefault()
     const { full_name, nick_name, user_name, password } = ev.target
 
@@ -19,7 +20,7 @@ export default class RegistrationForm extends Component {
       user_name: user_name.value,
       password: password.value,
       full_name: full_name.value,
-      nickname: nick_name.value,
+      nick_name: nick_name.value,
     })
     .then(user => {
     full_name.value = ''
@@ -31,7 +32,7 @@ export default class RegistrationForm extends Component {
   .catch(res => {
     this.setState({ error: res.error })
   })
-} */
+} 
 
   render() {
     const { error } = this.state

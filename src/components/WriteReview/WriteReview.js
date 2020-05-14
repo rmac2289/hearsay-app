@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './WriteReview.css'
 import { Textarea, Input, Button } from '../../Utils/Utils'
+import DiscussionApiService from '../../services/article-api-service'
 
 export default function WriteReview(props) {
     const [setNature, setNatureState] = useState("")
     const [setComments, setCommentsState] = useState("")
     const [setRating, setRatingState] = useState("")
+    const [error, setErrorState] = useState('')
+    const [setDateMonth, setDateMonthState] = useState('')
+    const [setDateDay, setDateDayState] = useState('')
+    const [setDateYear, setDateYearState] = useState('')
 
     function getNatureText(event) {
         setNatureState(event.target.value)
@@ -16,13 +21,42 @@ export default function WriteReview(props) {
     function getRating(event) {
         setRatingState(event.target.value)
     }
+    function getDateMonth(event){
+        setDateMonthState(event.target.value)
+    }
+    function getDateDay(event){
+        setDateDayState(event.target.value)
+    }
+    function getDateYear(event){
+        setDateYearState(event.target.value)
+    }
+
+    const setError = error => {
+        setErrorState({ error })
+      }
+
+    const handleSubmit = ev => {
+        ev.preventDefault()
+        const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`
+        DiscussionApiService.postReview(props.state, props.deptName, setNature, setRating, setComments, incidentDate)
+          .then(() => {
+            // eslint-disable-next-line no-unused-expressions
+            setNatureState('')
+            setRatingState('')
+            setCommentsState('')
+            setDateMonth('')
+            setDateDay('')
+            setDateYear('')
+          })
+          .catch(setError)
+      }
     return (
         <main>
             <header id="banner">
                 <h1>New Encounter</h1>
             </header>
             <section className="section">
-                <form className="reviewForm ReviewForm">
+                <form className="reviewForm ReviewForm" onSubmit={handleSubmit} >
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="state"><strong>State:</strong></label>
                         <Input value={props.state} onChange={props.onChangeState} className="reviewInput" type="text" name="state" required />
@@ -60,9 +94,9 @@ export default function WriteReview(props) {
                         </div>
                         <label htmlFor="date-month"><strong>When did this happen?</strong></label>
                         <div id="date">
-                            <Input className="reviewInput" id="date-month" type="number" name="date-month" placeholder="MM" min="1" max="12" required="" />
-                            <Input className="reviewInput date-day" id="date-day" type="number" name="date-day" placeholder="DD" min="1" max="31" required="" />
-                            <Input className="reviewInput date-year" id="date-year" type="number" name="date-year" placeholder="YYYY" min="2000" max="2020" required="" />
+                            <Input className="reviewInput" value={setDateMonth} onChange={getDateMonth} id="date-month" type="number" name="date-month" placeholder="MM" min="1" max="12" required="" />
+                            <Input className="reviewInput date-day" value={setDateDay} onChange={getDateDay} id="date-day" type="number" name="date-day" placeholder="DD" min="1" max="31" required="" />
+                            <Input className="reviewInput date-year" value={setDateYear} onChange={getDateYear} id="date-year" type="number" name="date-year" placeholder="YYYY" min="2000" max="2020" required="" />
                         </div>
                     </div>
 
