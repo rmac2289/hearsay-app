@@ -15,3 +15,18 @@
     margin-top: 50px;
     width: 50%;
 }
+#loginSignup {
+    text-decoration: none;
+    color: black;
+    padding: 2%;
+    background: white;
+    border-radius: 10px;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+#loginSignup:hover {
+    background: rgb(133, 41, 41);
+    color: white;
+    border-radius: 20px;
+}

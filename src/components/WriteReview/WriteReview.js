@@ -40,7 +40,6 @@ export default function WriteReview(props) {
         const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`
         DiscussionApiService.postReview(props.state, props.deptName, setNature, setRating, setComments, incidentDate)
           .then(() => {
-            // eslint-disable-next-line no-unused-expressions
             setNatureState('')
             setRatingState('')
             setCommentsState('')

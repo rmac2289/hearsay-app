@@ -3,7 +3,18 @@ import config from '../config'
 
 const DiscussionApiService = {
   getDiscussions() {
-    return fetch(`${config.API_ENDPOINT}/discussions`, {
+    return fetch(`${config.API_ENDPOINT}/discussion`, {
+      headers: {
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+  getTopics() {
+    return fetch(`${config.API_ENDPOINT}/discussion/topics`, {
       headers: {
       },
     })
@@ -14,9 +25,9 @@ const DiscussionApiService = {
       )
   },
   getDiscussion(discussionId) {
-    return fetch(`${config.API_ENDPOINT}/discussions/${discussionId}`, {
+    return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}`, {
       headers: {
-        'authorization': `basic ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -26,9 +37,9 @@ const DiscussionApiService = {
       )
   },
   getDiscussionComments(discussionId) {
-    return fetch(`${config.API_ENDPOINT}/discussions/${discussionId}/comments`, {
+    return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}/comments`, {
       headers: {
-        'authorization': `basic ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -38,11 +49,11 @@ const DiscussionApiService = {
       )
   },
   postComment(discussionId, text) {
-    return fetch(`${config.API_ENDPOINT}/discussions`, {
+    return fetch(`${config.API_ENDPOINT}/discussion`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `basic ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         discussion_id: discussionId,
@@ -69,7 +80,7 @@ const DiscussionApiService = {
   getReview(reviewId){
     return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
       headers: {
-        'authorization': `basic ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -83,7 +94,7 @@ const DiscussionApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `basic ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         state,
@@ -91,7 +102,7 @@ const DiscussionApiService = {
         nature,
         rating,
         comments,
-        incident_date
+        incident_date,
       }),
     })
       .then(res =>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Input, Required } from '../../Utils/Utils'
 import './Signup.css'
 import AuthApiService from '../../services/auth-api-service'
@@ -6,10 +7,11 @@ import AuthApiService from '../../services/auth-api-service'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
-    onRegistrationSuccess: () => {}
+    onRegistrationSuccess: () => {
+    }
   }
 
-  state = { error: null }
+  state = { error: null, success: null }
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -28,6 +30,7 @@ export default class RegistrationForm extends Component {
     user_name.value = ''
     password.value = ''
     this.props.onRegistrationSuccess()
+    this.setState({ success: true })
 })
   .catch(res => {
     this.setState({ error: res.error })
@@ -96,6 +99,7 @@ export default class RegistrationForm extends Component {
         <Button type='submit'>
           Register
         </Button>
+        {this.state.success && <h3><Link id="success" to='/login'>Success! Login now</Link></h3>}
         </div>
       </form>
       </section>

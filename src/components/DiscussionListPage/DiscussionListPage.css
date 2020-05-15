@@ -1,0 +1,13 @@
+#forumHeader {
+    text-align: center;
+}
+.topicList {
+    border: 1px solid white;
+    text-align: center;
+}
+#topicList {
+    padding: 3%;
+}
+.topicName {
+    padding: 2%;
+}

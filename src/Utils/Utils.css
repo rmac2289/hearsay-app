@@ -36,7 +36,7 @@
     border-radius: 4px;
     padding: 8px 12px;
     font-weight: bold;
-    transition-property: background;
+    transition-property: all;
     transition-duration: 1s;
     transition-timing-function: linear;
   }

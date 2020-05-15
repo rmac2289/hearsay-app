@@ -6,6 +6,23 @@
     justify-content: center;
     
 }
+.signupHeader {
+    text-align: center;
+}
+#success {
+    text-decoration: none;
+    color: black;
+    background: rgb(241, 241, 85);
+    padding: 2%;
+    border-radius: 10px;
+    transition-property: background, border-radius;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+#success:hover {
+    background: rgb(54, 173, 54);
+    border-radius: 30px;
+}
 .label {
     margin-bottom: 5px;
     font-size: 18px; 
@@ -16,7 +33,6 @@
 button:hover {
     cursor: pointer;
     background: rgb(0,0,0,0.6);
-    transition: .5s;
     color: white;
 }
 .signupSection {

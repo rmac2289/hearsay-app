@@ -1,30 +1,18 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
+import { Link } from 'react-router-dom'
 import './Login.css'
 import TokenService from '../../services/token-service'
-/* import AuthApiService from '../../services/auth-api-service' */
+import AuthApiService from '../../services/auth-api-service'
 
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
   }
-
+  
   state = { error: null }
 
-  handleSubmitBasicAuth = ev => {
-    ev.preventDefault()
-    const { user_name, password } = ev.target
-
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(user_name.value, password.value)
-    )
-
-    user_name.value = ''
-    password.value = ''
-    this.props.onLoginSuccess()
-  }
-
-  /* handleSubmitJwtAuth = ev => {
+  handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       this.setState({ error: null })
       const { user_name, password } = ev.target
@@ -42,7 +30,7 @@ export default class LoginForm extends Component {
         .catch(res => {
           this.setState({ error: res.error })
         })
-    } */
+    } 
 
   render() {
     const { error } = this.state
@@ -50,10 +38,10 @@ export default class LoginForm extends Component {
         <section className="forgot">
       <form
         className='LoginForm'
-        onSubmit={this.handleSubmitBasicAuth}
+        onSubmit={this.handleSubmitJwtAuth}
       >
         <div role='alert'>
-          {error && <p className='red'>{error}</p>}
+          {error && <p>{error}</p>}
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>
@@ -79,7 +67,7 @@ export default class LoginForm extends Component {
         <Button type='submit'>
           Login
         </Button>
-        <h4>Forgot username or password?</h4>
+        <h4><Link id="loginSignup" to='/signuppage'>First time? Register here</Link></h4>
       </form>
       </section>
     )
