@@ -12,7 +12,7 @@ export default function Conversation(props){
                 </header>
                 <p>Talk with your peers about what is working, what isn't, and what needs improvement.</p>
                 <div className="buttonDiv">
-                <Button><Link id="chatLink" to='/'>forum</Link></Button>
+                <Button><Link id="chatLink" to='/forum'>forum</Link></Button>
                 </div>
             </section>
     )

@@ -20,7 +20,7 @@ function App() {
       <PublicRoute path='/login' component={Login}/>
       <PrivateRoute path='/departments' component={Departments}/>
       <Route exact path='/singlereview' component={Review} />
-      <Route exact path='/forum' component={DiscussionListPage} />
+      <PrivateRoute exact path='/forum' component={DiscussionListPage} />
       <PublicRoute path='/signuppage' component={Signup} />
       <Footer />
     </main>

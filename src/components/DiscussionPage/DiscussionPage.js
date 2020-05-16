@@ -1,17 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import DiscussionApiService from '../../services/Discussion-api-service'
-import { NiceDate, Hyph, Section } from '../../Utils/Utils'
+import { Textarea } from '../../Utils/Utils'
 import './DiscussionPage.css'
+import config from '../../config'
 
 export default function DiscussionPage(props){
   return (
     <section>
-      <h1>Topic</h1>
-      <ul>Posts
-        <li></li>
+      <h1>{props.topic_name}</h1>
+      <ul>
+        {props.post}
       </ul>
-      <form>add comment</form>
     </section>
   )
 }
