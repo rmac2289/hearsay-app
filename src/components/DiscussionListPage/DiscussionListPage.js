@@ -3,6 +3,8 @@ import DiscussionApiService from '../../services/article-api-service'
 import './DiscussionListPage.css'
 import DiscussionPage from '../DiscussionPage/DiscussionPage'
 import { Button } from '../../Utils/Utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class DiscussionListPage extends Component {
@@ -10,7 +12,8 @@ export default class DiscussionListPage extends Component {
     topics: [],
     current_topic: '',
     posts: [],
-    users: []
+    users: [],
+    count: 0
   }
   componentDidMount() {
     DiscussionApiService.getTopics()
@@ -21,8 +24,8 @@ export default class DiscussionListPage extends Component {
       .catch((error) => console.error('Error', error))
     }
 
-  handleClick = (event) => {
-   
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 })
   }
 
   currentTopic = (event) => {
@@ -32,7 +35,10 @@ export default class DiscussionListPage extends Component {
   render() {
     const posts = this.state.posts
     const postList = posts.filter(post => post.topic_name === this.state.current_topic).map((value,index) => {
-      return <li className="postListItem" key={index}>{value.discussion_post}</li>
+      return <li className="postListItem" key={index}>
+        <p>{value.discussion_post}</p>
+          <Button onClick={this.incrementCount}><FontAwesomeIcon icon={faHeart} />{this.state.count}</Button>
+      </li>
     })
     const list = this.state.topics
     const listItems = list.map((value, index) => {
