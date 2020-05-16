@@ -7,22 +7,24 @@ const DiscussionApiService = {
       headers: {
       },
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    .then(response => {
+        if(!response.ok){
+            return response.json().then(e => Promise.reject(e))
+        }
+        return response.json()
+    })
   },
   getTopics() {
     return fetch(`${config.API_ENDPOINT}/discussion/topics`, {
       headers: {
       },
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    .then(response => {
+        if(!response.ok){
+            return response.json().then(e => Promise.reject(e))
+        }
+        return response.json()
+    })
   },
   getDiscussion(discussionId) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}`, {

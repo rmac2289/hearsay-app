@@ -10,6 +10,11 @@
 .forumHeader {
     text-align: center;
 }
+.postList {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%
+}
 #forumSubmit {
     margin-top: 20px;
 }

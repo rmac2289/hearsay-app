@@ -23,7 +23,10 @@
     min-height: 100px;
     border-radius: 20px;
 }
-
+.postListItem {
+    border: 1px solid white;
+    color: white;
+}
 .topicName {
     padding: 2%;   
 }
