@@ -6,6 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(0, 0, 60, 0.1);
+  background-image:  linear-gradient(rgb(100,0,0,0.1), rgb(0,0,100,0.1),white), url('./images/Abrahamson.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   /* background: linear-gradient(68deg,rgb(0,0,128,0.1) 50%, rgb(211,211,211,0.2) 50%) */
   
   

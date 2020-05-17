@@ -4,9 +4,11 @@
 #chatLink {
     color: black;
     text-decoration: none;
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
     
 }
 #chatLink:hover {
     color: white;
-    
 }

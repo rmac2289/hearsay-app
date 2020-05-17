@@ -1,9 +1,16 @@
 .forumHeader {
     text-align: center;
+    margin-top: 200px;
 }
 #forumHeader {
     font-family: 'Sacramento', cursive;
+    color: rgb(128,0,0,0.9);
+    background: white;
+    border-radius: 10px;
     font-size: 60px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .topicList {
     text-align: center;
@@ -11,6 +18,7 @@
     margin-bottom: 20px;
     color: rgb(0,0,0,0.8);
 }
+
 #topicList {
     padding: 3%;
     display: grid;
@@ -29,6 +37,22 @@
 }
 .topicName {
     padding: 2%;   
+}
+.like {
+    padding: 1%;
+    
+}
+.like:hover {
+    cursor: pointer;
+}
+#icon {
+    margin-right: 5px;
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+#icon:hover {
+    color: rgb(128,0,0,0.8);
 }
 @media only screen and (min-width: 520px){
     #topicList {

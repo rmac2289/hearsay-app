@@ -7,10 +7,14 @@
     margin-top:10px;
     
 }
-#communityLink:hover {
-    color: white;
-}
-#communityLink {
+#showMe {
     color: black;
     text-decoration: none;
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
+#showMe:hover {
+    color: white;
+}
+

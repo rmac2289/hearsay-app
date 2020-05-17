@@ -50,7 +50,7 @@ const DiscussionApiService = {
           : res.json()
       )
   },
-  postComment(discussionId, text) {
+  postComment(topic_name, discussion_post) {
     return fetch(`${config.API_ENDPOINT}/discussion`, {
       method: 'POST',
       headers: {
@@ -58,8 +58,8 @@ const DiscussionApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        discussion_id: discussionId,
-        text,
+        discussion_post,
+        topic_name,
       }),
     })
       .then(res =>

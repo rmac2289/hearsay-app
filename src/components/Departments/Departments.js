@@ -4,7 +4,7 @@ import './Departments.css'
 import Agencies from '../../Agencies'
 import WriteReview from '../WriteReview/WriteReview'
 
-export default function Departments(props){
+export default function Departments(){
     const [setSelect, setSelectState] = useState("")
     const [setDeptSelect, setDeptSelectState] = useState("")
 
@@ -27,7 +27,7 @@ export default function Departments(props){
     return (        
         <div>
             <header className="departmentsHeader">
-                <h2>find law enforcement agency</h2>
+                <h1 id="agency">agency finder</h1>
             </header>
             <section className="departmentsSection">
                 <p>pick your state, then choose the department from the list</p>

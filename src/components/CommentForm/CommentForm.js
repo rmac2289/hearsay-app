@@ -1,32 +1,28 @@
 import React, { Component } from 'react'
-import DiscussionContext from '../../contexts/DiscussionContext'
-import DiscussionApiService from '../../services/Discussion-api-service'
-import { Button, Textarea } from '../Utils/Utils'
+import DiscussionApiService from '../../services/article-api-service'
+import { Button, Textarea } from '../../Utils/Utils'
 import './CommentForm.css'
 
 export default class CommentForm extends Component {
-  static contextType = DiscussionContext
+  state = { discussion_post: '' }
+
+  getPostText = ev => {
+    this.setState({ discussion_post: ev.target.value })
+  }
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { discussion } = this.context
-    const { text } = ev.target
-    DiscussionApiService.postComment(discussion.id, text.value)
-      .then(this.context.addComment)
-      .then(() => {
-        text.value = ''
-      })
-      .catch(this.context.setError)
+    DiscussionApiService.postComment(this.props.current_topic, this.state.discussion_post)
+      .then(this.setState({ discussion_post: '' }))
+      .catch(error => console.error(error))
   }
 
   render() {
     return (
-      <form
-        className='CommentForm'
-        onSubmit={this.handleSubmit}
-      >
+      <form onSubmit={this.handleSubmit}>
         <div className='text'>
           <Textarea
+            onChange={this.getPostText}
             required
             aria-label='Type a comment...'
             name='text'

@@ -2,5 +2,13 @@
     text-align: center;
 }
 #aboutLink {
+    
+    color: black;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+#aboutLink:hover {
     color: white;
 }
