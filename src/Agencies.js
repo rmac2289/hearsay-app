@@ -1947,7 +1947,7 @@ const Agencies = {
         "Floyd County Police Department",
         "Fulton County Police Department",
         "Glynn County Police Department",
-        "vGwinnett County Police Department",
+        "Gwinnett County Police Department",
         "Henry County Police Department",
         "Polk County Police Department",
         "Ware County Police Department",

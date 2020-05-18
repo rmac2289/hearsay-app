@@ -34,7 +34,7 @@ export default function Community(props){
                 </select>
                 <select onChange={deptSelectChange} className="select">
                     {setSelect !== "" && <option defaultValue="choose department">choose department</option>}
-                    {setSelect !== "" && depts.map((value, index) => {
+                    {setSelect !== "" && depts.sort().map((value, index) => {
                     return <option value={value} key={index}>{value}</option>})} 
                 </select>
                 <div>

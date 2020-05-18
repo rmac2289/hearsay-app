@@ -52,7 +52,7 @@ export default function WriteReview(props) {
     return (
         <main>
             <header id="banner">
-                <h1>New Encounter</h1>
+                <h1 className="newHeader">New Review</h1>
             </header>
             <section className="section">
                 <form className="reviewForm ReviewForm" onSubmit={handleSubmit} >

@@ -1,10 +1,12 @@
 .departmentsHeader {
 	text-align: center;
-	margin-top: 200px;
 }
 .departmentsSection {
 	margin-bottom: 50px;
 	width: 75%;
+}
+.deptP {
+	padding: 1%;
 }
 .departmentLink {
 	color: white;

@@ -3,15 +3,19 @@ import './Review.css'
 import DiscussionApiService from '../../services/article-api-service'
 import moment from 'moment'
 
+
 export default function Review(props){
 const [reviews, setReviews] = useState([])
 useEffect(() => {
     DiscussionApiService.getReviews()
-        .then(data => setReviews(data))
+        .then(data => {
+            setReviews(data);
+            console.log(data);
+        })
         .catch(error => console.error(error))
 }, [])
-
-const reviewsList = reviews.map((value, index) => {
+const filtered = props.department
+const reviewsList = reviews.filter(review => review.department === filtered).map((value, index) => {
     const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
     const reviewDate = moment(value.review_date).format("dddd, MMMM Do YYYY")
     return <section key={index} className="reviewSection">
@@ -30,7 +34,7 @@ const reviewsList = reviews.map((value, index) => {
             <header className="reviewHeader">
                 <h1 id="reviewHeader">Reviews</h1>
             </header>
-            {reviewsList}
+            {reviewsList.length > 0 ? reviewsList : <section id="nobody"><h3>Looks like nobody has reviewed this agency yet!</h3></section>}
         </div>
     )
 }

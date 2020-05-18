@@ -2,7 +2,6 @@
     margin-bottom: 50px;
 }
 .reviewHeader {
-    margin-top: 200px;
     text-align: center;
 }
 .reviewSection p {
@@ -21,4 +20,8 @@
 }
 strong {
     color: rgb(245, 118, 118);
+}
+#nobody {
+    text-align: center;
+    min-height: 100px;
 }
