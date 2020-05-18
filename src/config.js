@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000/api',
-  TOKEN_KEY: 'hearsay-app-auth-token',
+  API_ENDPOINT: 'https://fierce-cliffs-47097.herokuapp.com',
+  TOKEN_KEY: process.env.REACT_APP_TOKEN_KEY,
 }
