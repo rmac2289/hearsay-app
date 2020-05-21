@@ -1,19 +1,24 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Button, Input } from '../../Utils/Utils'
 import { Link } from 'react-router-dom'
 import './Login.css'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import useRouter from '../../Utils/CustomHooks'
 
-export default class LoginForm extends Component {
-  static defaultProps = {
-    onLoginSuccess: () => {}
-  }
-  state = { error: null }
+export default function LoginForm(props) {
+  const router = useRouter()
+  const onLoginSuccess = () => {
+      alert('success!')
+      return router.push('/');
 
-  handleSubmitJwtAuth = ev => {
+    }
+  const [error, setError] = useState(null)
+  const [isLoggedIn,setIsLoggedin]=useState(false)
+
+  const handleSubmitJwtAuth = ev => {
       ev.preventDefault()
-      this.setState({ error: null })
+      setError(null)
       const { user_name, password } = ev.target
     
       AuthApiService.postLogin({
@@ -24,20 +29,18 @@ export default class LoginForm extends Component {
           user_name.value = ''
           password.value = ''
           TokenService.saveAuthToken(res.authToken)
-          this.props.onLoginSuccess()
+          onLoginSuccess()
         })
         .catch(res => {
-          this.setState({ error: res.error })
+          setError(true)
         })
     } 
-
-  render() {
-    const { error } = this.state
     return (
         <section className="forgot">
+          <h4 id="access">log in to access reviews and discussion forum!</h4>
       <form
         className='LoginForm'
-        onSubmit={this.handleSubmitJwtAuth}
+        onSubmit={handleSubmitJwtAuth}
       >
         <div role='alert'>
           {error && <p>{error}</p>}
@@ -71,4 +74,4 @@ export default class LoginForm extends Component {
       </section>
     )
   }
-}
+

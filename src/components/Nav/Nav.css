@@ -27,8 +27,9 @@ nav {
 nav > ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 16px;
-    justify-content: space-around;
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
@@ -53,6 +54,12 @@ nav > ul {
 }
 #linkLogo {
   margin: 0;
+}
+@media only screen and (min-width: 420px){
+  nav > ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
   

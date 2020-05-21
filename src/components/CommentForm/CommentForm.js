@@ -19,7 +19,7 @@ export default class CommentForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form id="commentForm" onSubmit={this.handleSubmit}>
         <div className='text'>
           <Textarea
             onChange={this.getPostText}

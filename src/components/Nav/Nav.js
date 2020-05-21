@@ -6,12 +6,13 @@ import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 import TokenService from '../../services/token-service'
 
 
-export default class Nav extends Component{
+export default class Nav extends Component {
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         this.forceUpdate()
     }
+
 
     renderLogoutLink = () => {
         return (
@@ -24,7 +25,6 @@ export default class Nav extends Component{
             </Link>
         )
       }
-     
     renderLoginLink = () => {
         return (
             <>
@@ -33,6 +33,7 @@ export default class Nav extends Component{
             </>
         )
       }
+    
       render(){
     return (
         <nav>
