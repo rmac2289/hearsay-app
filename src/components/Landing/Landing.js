@@ -6,11 +6,12 @@ import Community from '../Community/Community'
 import Conversation from '../Conversation/Conversation'
 import Threats from '../Threats/Threats'
 import About from '../About/About'
+import TokenService from '../../services/token-service';
 
 
 
 export default function Landing(props) {
-
+    
     return (
         <div className="mainDiv">
             <Header />

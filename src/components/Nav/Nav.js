@@ -7,9 +7,9 @@ import TokenService from '../../services/token-service'
 
 
 export default class Nav extends Component {
-
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        sessionStorage.removeItem('username')
         this.forceUpdate()
     }
 
@@ -33,9 +33,10 @@ export default class Nav extends Component {
             </>
         )
       }
-    
+
       render(){
     return (
+        <>
         <nav>
             <h5 id="linkLogo"><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
             <ul>{TokenService.hasAuthToken() ? this.renderLogoutLink():this.renderLoginLink()}
@@ -44,6 +45,7 @@ export default class Nav extends Component {
                 <li><Link className="navLink" to='/forum'>Forum</Link></li>
             </ul>
         </nav>
+        </>
     )
       }
 }

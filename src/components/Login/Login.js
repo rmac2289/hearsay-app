@@ -6,16 +6,14 @@ import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import useRouter from '../../Utils/CustomHooks'
 
-export default function LoginForm(props) {
+export default function LoginForm() {
   const router = useRouter()
-  const onLoginSuccess = () => {
-      alert('success!')
+  const onLoginSuccess = (user_name) => {
+      sessionStorage.setItem('username', user_name.value);
       return router.push('/');
-
     }
   const [error, setError] = useState(null)
-  const [isLoggedIn,setIsLoggedin]=useState(false)
-
+  
   const handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       setError(null)
@@ -26,10 +24,11 @@ export default function LoginForm(props) {
         password: password.value,
       })
         .then(res => {
+          onLoginSuccess(user_name)
           user_name.value = ''
           password.value = ''
           TokenService.saveAuthToken(res.authToken)
-          onLoginSuccess()
+          
         })
         .catch(res => {
           setError(true)
