@@ -10,7 +10,6 @@ import Nav from '../Nav/Nav'
 import PrivateRoute from '../../Utils/privateRoute'
 import PublicRoute from '../../Utils/publicRoute'
 import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
-import TokenService from '../../services/token-service'
 
 
 function App() {

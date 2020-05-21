@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
 import { Link } from 'react-router-dom'
 import './Login.css'
@@ -6,17 +6,21 @@ import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import useRouter from '../../Utils/CustomHooks'
 
-export default function LoginForm() {
-  const router = useRouter()
-  const onLoginSuccess = (user_name) => {
+
+export default class LoginForm extends Component {
+
+  onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
-      return router.push('/');
+      this.props.history.push('/')
     }
-  const [error, setError] = useState(null)
+  state= {
+    error: null,
+    loggedIn: null
+  }
   
-  const handleSubmitJwtAuth = ev => {
+  handleSubmitJwtAuth = ev => {
       ev.preventDefault()
-      setError(null)
+      this.setState({error: null})
       const { user_name, password } = ev.target
     
       AuthApiService.postLogin({
@@ -24,25 +28,24 @@ export default function LoginForm() {
         password: password.value,
       })
         .then(res => {
-          onLoginSuccess(user_name)
+          this.onLoginSuccess(user_name)
           user_name.value = ''
           password.value = ''
           TokenService.saveAuthToken(res.authToken)
           
         })
         .catch(res => {
-          setError(true)
+          this.setState({error: true})
         })
     } 
+   render(){
     return (
         <section className="forgot">
           <h4 id="access">log in to access reviews and discussion forum!</h4>
-      <form
-        className='LoginForm'
-        onSubmit={handleSubmitJwtAuth}
-      >
+      <form onSubmit={this.handleSubmitJwtAuth}
+>
         <div role='alert'>
-          {error && <p>{error}</p>}
+          {this.state.error && <p>{this.state.error}</p>}
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>
@@ -73,4 +76,5 @@ export default function LoginForm() {
       </section>
     )
   }
+}
 
