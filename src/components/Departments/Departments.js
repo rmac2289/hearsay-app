@@ -4,6 +4,8 @@ import './Departments.css'
 import Agencies from '../../Agencies'
 import WriteReview from '../WriteReview/WriteReview'
 import Review from '../Review/Review'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 
 export default function Departments(){
     const [setSelect, setSelectState] = useState("")
@@ -20,7 +22,9 @@ export default function Departments(){
         return <option key={index} value={value}>{value}</option>    
     })
     const depts = Agencies.States[setSelect]
-    return (        
+    return (   
+        <>
+        <Nav />     
         <div>
             <header className="departmentsHeader">
                 <h1 id="agency">agency finder</h1>
@@ -39,7 +43,8 @@ export default function Departments(){
                 </select>
                 </section>
             {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><WriteReview onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/><Review department={setDeptSelect}/></>}
-
         </div>
+        <Footer />
+        </>
     )
 }

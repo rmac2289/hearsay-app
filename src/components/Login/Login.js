@@ -1,17 +1,19 @@
-import React, { useState, Component } from 'react'
+import React, { Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
 import { Link } from 'react-router-dom'
 import './Login.css'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
-import useRouter from '../../Utils/CustomHooks'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
 
 
 export default class LoginForm extends Component {
 
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
-      this.props.history.push('/')
+      this.props.history.push('/', {forceRefresh: true});
+      this.props.render();
     }
   state= {
     error: null,
@@ -28,10 +30,12 @@ export default class LoginForm extends Component {
         password: password.value,
       })
         .then(res => {
-          this.onLoginSuccess(user_name)
+          TokenService.saveAuthToken(res.authToken)
+          if (TokenService.hasAuthToken()){
+            return this.onLoginSuccess(user_name)
+          }
           user_name.value = ''
           password.value = ''
-          TokenService.saveAuthToken(res.authToken)
           
         })
         .catch(res => {
@@ -40,10 +44,11 @@ export default class LoginForm extends Component {
     } 
    render(){
     return (
+      <>
+      <Nav />
         <section className="forgot">
           <h4 id="access">log in to access reviews and discussion forum!</h4>
-      <form onSubmit={this.handleSubmitJwtAuth}
->
+      <form onSubmit={this.handleSubmitJwtAuth}>
         <div role='alert'>
           {this.state.error && <p>{this.state.error}</p>}
         </div>
@@ -74,6 +79,8 @@ export default class LoginForm extends Component {
         <h4><Link id="loginSignup" to='/signuppage'>First time? Register here</Link></h4>
       </form>
       </section>
+      <Footer />
+      </>
     )
   }
 }
