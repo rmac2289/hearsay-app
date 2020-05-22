@@ -6,15 +6,13 @@ import './CommentForm.css'
 export default class CommentForm extends Component {
   state = { discussion_post: '' }
 
-  getPostText = ev => {
-    this.setState({ discussion_post: ev.target.value })
-  }
+  getPostText = ev => {this.setState({ discussion_post: ev.target.value })}
 
   handleSubmit = ev => {
     ev.preventDefault()
     DiscussionApiService.postComment(this.props.current_topic, this.state.discussion_post)
       .then(this.setState({ discussion_post: '' }))
-      .catch(error => console.error(error))
+      .catch(error => console.error(error));
   }
 
   render() {

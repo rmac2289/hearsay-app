@@ -25,15 +25,19 @@ nav {
  
 }
 #welcome {
-  color: red;
+  color: white;
   font-family: 'Sacramento', cursive;
   font-size: 38px;
   padding: 0;
+  position:absolute;
+  background: none;
+  top:10px;
+  left: 10px;
   margin: 0 auto 0 auto;
-  width: 50%;
-  background: white;
+  width: 30%;
   text-align: center;
   border-radius: 20px;
+  border: 1px solid rgb(255,255,255,0.5)
 }
 nav > ul {
     list-style: none;

@@ -10,18 +10,22 @@
     text-align: center;
 }
 #success {
-    text-decoration: none;
-    color: black;
-    background: rgb(241, 241, 85);
-    padding: 2%;
+    border: 1px solid #aaa;
+    color: white;
+    background-color: darkgreen;
+    font-size: 1.1em;
     border-radius: 10px;
-    transition-property: background, border-radius;
+    padding: 8px 12px;
+    font-weight: bold;
+    transition-property: all;
     transition-duration: 1s;
     transition-timing-function: linear;
+    text-decoration: none;
 }
 #success:hover {
-    background: rgb(54, 173, 54);
-    border-radius: 30px;
+    border-radius: 20px;
+    color: darkgreen;
+    background: white;
 }
 .label {
     margin-bottom: 5px;
@@ -36,7 +40,6 @@ button:hover {
     color: white;
 }
 .signupSection {
-    
     width: 75%;
 }
 @media only screen and (min-width: 720px){

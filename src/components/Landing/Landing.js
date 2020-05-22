@@ -6,16 +6,13 @@ import Community from '../Community/Community'
 import Conversation from '../Conversation/Conversation'
 import Threats from '../Threats/Threats'
 import About from '../About/About'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
 
 
 
-export default function Landing(props) {
+
+export default function Landing() {
     
     return (
-        <>
-        <Nav />
         <div className="mainDiv">
             <Header />
         <div className="landingContainer">
@@ -28,7 +25,5 @@ export default function Landing(props) {
             </div>
         </div>
         </div>
-        <Footer />
-        </>
     )
 }

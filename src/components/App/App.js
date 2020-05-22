@@ -8,6 +8,7 @@ import Signup from '../Signup/Signup'
 import PrivateRoute from '../../Utils/privateRoute'
 import PublicRoute from '../../Utils/publicRoute'
 import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
+import DiscussionPage from '../DiscussionPage/DiscussionPage'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route exact path='/singlereview' component={Review} />
       <PrivateRoute exact path='/forum' component={DiscussionListPage} />
       <PublicRoute path='/signuppage' component={Signup} />
+      <PrivateRoute path='/comments' component={DiscussionPage} />
       
     </main>
   );

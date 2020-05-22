@@ -11,8 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* background: linear-gradient(68deg,rgb(0,0,128,0.1) 50%, rgb(211,211,211,0.2) 50%) */
-  padding-top: 160px;
-  
+  padding-top: 175px;
   
 }
 ul {
@@ -21,4 +20,9 @@ ul {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media only screen and (min-width: 420px){
+  body {
+    padding-top: 115px;
+  }
 }

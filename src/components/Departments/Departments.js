@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import './Departments.css'
 import Agencies from '../../Agencies'
 import WriteReview from '../WriteReview/WriteReview'

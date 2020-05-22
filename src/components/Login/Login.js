@@ -12,7 +12,7 @@ export default class LoginForm extends Component {
 
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
-      this.props.history.push('/', {forceRefresh: true});
+      this.props.history.push('/');
       this.props.render();
     }
   state= {
@@ -38,8 +38,8 @@ export default class LoginForm extends Component {
           password.value = ''
           
         })
-        .catch(res => {
-          this.setState({error: true})
+        .catch((error) => {
+        
         })
     } 
    render(){

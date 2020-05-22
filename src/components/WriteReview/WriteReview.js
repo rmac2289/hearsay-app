@@ -31,8 +31,8 @@ export default function WriteReview(props) {
         setDateYearState(event.target.value)
     }
 
-    const setError = error => {
-        setErrorState({ error })
+    const setError = () => {
+        setErrorState(error)
       }
 
     const handleSubmit = ev => {

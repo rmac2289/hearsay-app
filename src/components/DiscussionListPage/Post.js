@@ -9,6 +9,7 @@ export default function Post(props){
     const [dislikeCount, setDislikeCount] = useState(0)
 
     const parsedDate = moment(props.date).format("dddd, MMMM Do YYYY")
+    
     const addLike = () => {
         setCount(count + 1 );
       }
@@ -26,9 +27,6 @@ export default function Post(props){
             <div onClick={dislike}>
             <FontAwesomeIcon id="icon" icon={faThumbsDown} />{dislikeCount}
             </div>
-            
-            
-           
           </div>
           <div><strong>posted by:</strong> {props.user}</div>
           <div><strong>on:</strong> {parsedDate}</div>
