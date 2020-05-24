@@ -1,6 +1,6 @@
 import React from 'react'
 import './DiscussionPage.css'
-import CommentForm from '../CommentForm/CommentForm'
+import CommentForm from '../CommentForm/TestCommentForm'
 
 
 

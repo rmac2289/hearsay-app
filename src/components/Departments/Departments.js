@@ -1,14 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Departments.css'
 import Agencies from '../../Agencies'
 import WriteReview from '../WriteReview/WriteReview'
 import Review from '../Review/Review'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
+import DiscussionApiService from '../../services/article-api-service'
 
 export default function Departments(){
     const [setSelect, setSelectState] = useState("")
     const [setDeptSelect, setDeptSelectState] = useState("")
+    const [reviews, setReviews] = useState([])
+
+    const handleAddReview = (ev, review) => {
+        ev.preventDefault();
+        const newReviews = reviews.concat([review]);
+        setReviews(newReviews);
+        DiscussionApiService.postReview(setSelect, setDeptSelect, review.nature, review.rating, review.comments, review.incident_date )
+            .then(setReviews(newReviews))
+            .catch(error => console.error(error));
+    }
+
+    useEffect(() => {
+        DiscussionApiService.getReviews()
+            .then(data => {
+                setReviews(data);
+                console.log(data);
+            })
+            .catch(error => console.error(error))
+    }, [])
 
     function selectChange(event){
         setSelectState(event.target.value)
@@ -41,7 +61,7 @@ export default function Departments(){
                     return <option value={value} key={index}>{value}</option>})} 
                 </select>
                 </section>
-            {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><WriteReview onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/><Review department={setDeptSelect}/></>}
+            {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><WriteReview handleAddReview={handleAddReview} onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/><Review reviews={reviews}department={setDeptSelect}/></>}
         </div>
         <Footer />
         </>

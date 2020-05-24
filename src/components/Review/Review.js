@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Review.css'
-import DiscussionApiService from '../../services/article-api-service'
 import moment from 'moment'
 
 
 export default function Review(props){
-const [reviews, setReviews] = useState([])
-useEffect(() => {
-    DiscussionApiService.getReviews()
-        .then(data => {
-            setReviews(data);
-            console.log(data);
-        })
-        .catch(error => console.error(error))
-}, [])
+    
 const filtered = props.department
-const reviewsList = reviews.filter(review => review.department === filtered).map((value, index) => {
+const reviewsList = props.reviews.filter(review => review.department === filtered).map((value, index) => {
     const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
     const reviewDate = moment(value.review_date).format("dddd, MMMM Do YYYY")
+    console.log(value)
     return <section key={index} className="reviewSection">
     <p><strong>State:</strong> {value.state}</p>
     <p><strong>Department:</strong> {value.department}</p>
@@ -29,6 +21,7 @@ const reviewsList = reviews.filter(review => review.department === filtered).map
     <p><strong>User:</strong> {value.user}</p>
     </section>
 })
+console.log(reviewsList)
     return(
         <div>
             <header className="reviewHeader">

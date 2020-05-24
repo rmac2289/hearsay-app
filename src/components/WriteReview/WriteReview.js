@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './WriteReview.css'
 import { Textarea, Input, Button } from '../../Utils/Utils'
-import DiscussionApiService from '../../services/article-api-service'
+
 
 export default function WriteReview(props) {
     const [setNature, setNatureState] = useState("")
     const [setComments, setCommentsState] = useState("")
     const [setRating, setRatingState] = useState("")
-    const [error, setErrorState] = useState('')
     const [setDateMonth, setDateMonthState] = useState('')
     const [setDateDay, setDateDayState] = useState('')
     const [setDateYear, setDateYearState] = useState('')
@@ -30,25 +29,26 @@ export default function WriteReview(props) {
     function getDateYear(event){
         setDateYearState(event.target.value)
     }
-
-    const setError = () => {
-        setErrorState(error)
+   
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`
+      const review_fields = {
+          state: props.state,
+          department: props.deptName,
+          nature: setNature,
+          rating: setRating,
+          comments: setComments,
+          incident_date: incidentDate,
+          user: sessionStorage.getItem('username')
       }
 
-    const handleSubmit = ev => {
-        ev.preventDefault()
-        const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`
-        DiscussionApiService.postReview(props.state, props.deptName, setNature, setRating, setComments, incidentDate)
-          .then(() => {
-            setNatureState('')
-            setRatingState('')
-            setCommentsState('')
-            setDateMonth('')
-            setDateDay('')
-            setDateYear('')
-          })
-          .catch(setError)
+      if (!review_fields) {
+        return;
       }
+        props.handleAddReview(e, review_fields);
+    }
+
     return (
         <main>
             <header id="banner">

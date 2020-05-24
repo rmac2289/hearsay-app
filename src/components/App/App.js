@@ -11,6 +11,7 @@ import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
 import DiscussionPage from '../DiscussionPage/DiscussionPage'
 
 
+
 function App() {
   
   return (
@@ -20,7 +21,7 @@ function App() {
       <PublicRoute path='/login' component={Login}/>
       <PrivateRoute path='/departments' component={Departments}/>
       <Route exact path='/singlereview' component={Review} />
-      <PrivateRoute exact path='/forum' component={DiscussionListPage} />
+      <PrivateRoute path='/forum' component={DiscussionListPage} />
       <PublicRoute path='/signuppage' component={Signup} />
       <PrivateRoute path='/comments' component={DiscussionPage} />
       
