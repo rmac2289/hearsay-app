@@ -1,12 +1,10 @@
 import React from 'react';
-import App from './App';
+import CommentBox from './CommentBox';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
 
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, div);
+  ReactDOM.render(<CommentBox />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-

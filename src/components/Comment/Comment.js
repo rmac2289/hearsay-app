@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
-import '../DiscussionListPage/Post.css'
+import './Comment.css'
 import moment from 'moment'
 
 export default function Post(props){
