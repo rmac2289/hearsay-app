@@ -34,7 +34,8 @@ export default class CommentForm extends Component {
             placeholder="Say something..."
             onChange={this.handleTextChange}
           />
-          <Button type="submit">post comment</Button>
+          {this.props.currentTopic === '' ? <Button disabled type="submit">post comment</Button>:
+          <Button type="submit">post comment</Button>}
         </form>
         </section>
       );

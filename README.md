@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Hearsay 
 
-## Available Scripts
+[Live App](https://hearsay-app.rmac2289.now.sh/)
 
-In the project directory, you can run:
+---
+##Summary
 
-### `yarn start`
+Hearsay is a web app designed to allow users to review encounters with law enforcement. The app asks the user for information about their encounter and an explanation concerning how they felt the encounter went. Hearsay also includes a discussion board with various topics across the criminal justice field where users can express their opinions.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+##API Documentation
 
-### `yarn test`
+###API Root 
+https://fierce-cliffs-47097.herokuapp.com/api
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A bearer token is required for use of the API. The token can be acquired through registering with a username and password via the register link on the navigation bar.
 
-### `yarn build`
+###API Endpoints
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The API has multiple endpoints:
+- /login
+    The authentication endpoint called when the user attempts to login. Will authenticate
+    username and password and either log the user in or provide 'incorrect username or password' response.
+- /reviews
+    Accepts GET and POST requests. Reviews endpoint is called when the user attempts to 
+    either post a review or to view current reviews.
+- /users
+    Accepts POST request. The users endpoint is called when a new user is attempting registration. 
+- /discussion
+    Accepts GET and POST requests. Discussion endpoint is called when the user clicks on a discussion topic or attempts to post a comment to that discussion.
+- /discussion/topics
+    Accepts GET request. Topics endpoint is called whenever the user navigates to the discussion/forum page. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Screenshots
 
-### `yarn eject`
+![Home Page](/images/homepage.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Reviews](/images/reviews.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Discussion](/images/discussion.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##Technologies
 
-## Learn More
+###Codebase
+[React](https://reactjs.org/)
+[Node.js](https://nodejs.org/en/)
+[PostgreSQL](https://www.postgresql.org/)
+[Express](https://expressjs.com/)
+[Knex](http://knexjs.org/)
+[JWT](https://jwt.io/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###Test
+[Mocha](https://mochajs.org/)
+[Chai](https://www.chaijs.com/)
+[Supertest](https://www.npmjs.com/package/supertest)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###Deployment
+[Heroku](https://dashboard.heroku.com/)
+[GitHub(client)](https://github.com/rmac2289/hearsay-app)
+[Github(server)](https://github.com/rmac2289/hearsay-server)
+[Zeit/Vercel](https://vercel.com)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

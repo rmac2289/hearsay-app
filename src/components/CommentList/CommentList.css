@@ -26,6 +26,9 @@
     margin-right: auto;
     padding: 2%
 }
+.choose {
+    text-align: center;
+}
 #forumSubmit {
     margin-top: 20px;
 }

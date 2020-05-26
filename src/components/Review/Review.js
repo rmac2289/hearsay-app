@@ -9,7 +9,6 @@ const filtered = props.department
 const reviewsList = props.reviews.filter(review => review.department === filtered).map((value, index) => {
     const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
     const reviewDate = moment(value.review_date).format("dddd, MMMM Do YYYY")
-    console.log(value)
     return <section key={index} className="reviewSection">
     <p><strong>State:</strong> {value.state}</p>
     <p><strong>Department:</strong> {value.department}</p>
@@ -18,10 +17,8 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
     <p><strong>Rating:</strong> {value.rating}</p>
     <p><strong>Review Date:</strong> {reviewDate}</p>
     <p><strong>Comments:</strong> {value.comments}</p>
-    <p><strong>User:</strong> {value.user_name}</p>
     </section>
 })
-console.log(reviewsList)
     return(
         <div>
             <header className="reviewHeader">

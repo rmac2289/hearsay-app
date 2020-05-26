@@ -4,7 +4,7 @@ import './DiscussionListPage.css'
 import { Button } from '../../Utils/Utils'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
-import CommentBox from '../CommentForm/CommentBox'
+import CommentBox from '../CommentBox/CommentBox'
 
 
 export default class DiscussionListPage extends Component {

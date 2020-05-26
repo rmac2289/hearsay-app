@@ -6,7 +6,7 @@ import Community from '../Community/Community'
 import Conversation from '../Conversation/Conversation'
 import Threats from '../Threats/Threats'
 import About from '../About/About'
-
+import TryApp from '../TryApp/TryApp'
 
 
 
@@ -18,6 +18,7 @@ export default function Landing() {
         <div className="landingContainer">
             <div className="sectionContainer">
                 <About />
+                <TryApp />
                 <Community />
                 <Conversation />
                 <Threats />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CommentList from './CommentList'
-import CommentForm from './TestCommentForm'
+import CommentList from '../CommentList/CommentList'
+import CommentForm from '../CommentForm/CommentForm'
 import DiscussionApiService from '../../services/article-api-service'
 
 

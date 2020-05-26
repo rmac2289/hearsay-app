@@ -13,8 +13,8 @@ export default class LoginForm extends Component {
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
       this.props.history.push('/');
-      this.props.render();
     }
+
   state= {
     error: null,
     loggedIn: null
@@ -38,9 +38,7 @@ export default class LoginForm extends Component {
           password.value = ''
           
         })
-        .catch((error) => {
-        
-        })
+        .catch(res => this.setState({error: res.error}))
     } 
    render(){
     return (
@@ -50,7 +48,7 @@ export default class LoginForm extends Component {
           <h4 id="access">log in to access reviews and discussion forum!</h4>
       <form onSubmit={this.handleSubmitJwtAuth}>
         <div role='alert'>
-          {this.state.error && <p>{this.state.error}</p>}
+          {this.state.error && <p id="incorrect">{this.state.error}</p>}
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>

@@ -3,6 +3,7 @@ import './WriteReview.css'
 import { Textarea, Input, Button } from '../../Utils/Utils'
 
 
+
 export default function WriteReview(props) {
     const [setNature, setNatureState] = useState("")
     const [setComments, setCommentsState] = useState("")
@@ -83,12 +84,12 @@ export default function WriteReview(props) {
                                 aria-label='Rating'
                                 name='rating'
                                 id='rating'
-                            >
-                                <option value='1'>1 Star</option>
-                                <option value='2'>2 Stars</option>
-                                <option value='3'>3 Stars</option>
-                                <option value='4'>4 Stars</option>
-                                <option value='5'>5 Stars</option>
+                            >   <option value="">--pick a rating--</option>
+                                <option value='1'>1 - Unacceptable</option>
+                                <option value='2'>2 - Bad</option>
+                                <option value='3'>3 - Acceptable</option>
+                                <option value='4'>4 - Good</option>
+                                <option value='5'>5 - Above and Beyond</option>
                             </select>
                         </div>
                         <label htmlFor="date-month"><strong>When did this happen?</strong></label>

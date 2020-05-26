@@ -25,7 +25,6 @@ export default function Departments(){
         DiscussionApiService.getReviews()
             .then(data => {
                 setReviews(data);
-                console.log(data);
             })
             .catch(error => console.error(error))
     }, [])
