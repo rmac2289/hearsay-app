@@ -36,6 +36,7 @@
 .postListItem {
     border: 1px solid white;
     color: white;
+    margin-bottom: 20px;
 }
 .topicName {
     padding: 2%;   
