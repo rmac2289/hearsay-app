@@ -35,14 +35,9 @@ The API has multiple endpoints:
 ---
 
 ## Screenshots
-#### Home Page
-<img src="./images/.png" max-width="600"/>
-
-#### Reviews
+<img src="./images/homepage.png" max-width="600"/>
 <img src="./images/Screen Shot 2020-05-26 at 2.28.26 PM.png" max-width="600"/>
-<img src="./images/Screen Shot 2020-05-26 at 2.19.19 PM.png" max-width="600"/>
-
-#### Discussion
+<img src="./images/Screen Shot 2020-05-26 at 2.29.19 PM.png" max-width="600"/>
 <img src="./images/Screen Shot 2020-05-26 at 2.30.34 PM.png" max-width="600"/>
 
 
@@ -51,23 +46,23 @@ The API has multiple endpoints:
 ## Technologies
 
 ### Codebase
-[React](https://reactjs.org/)
-[Node.js](https://nodejs.org/en/)
-[PostgreSQL](https://www.postgresql.org/)
-[Express](https://expressjs.com/)
-[Knex](http://knexjs.org/)
-[JWT](https://jwt.io/)
+- [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Express](https://expressjs.com/)
+- [Knex](http://knexjs.org/)
+- [JWT](https://jwt.io/)
 
 ### Test
-[Mocha](https://mochajs.org/)
-[Chai](https://www.chaijs.com/)
-[Supertest](https://www.npmjs.com/package/supertest)
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 
 ### Deployment
-[Heroku](https://dashboard.heroku.com/)
-[GitHub(client)](https://github.com/rmac2289/hearsay-app)
-[Github(server)](https://github.com/rmac2289/hearsay-server)
-[Zeit/Vercel](https://vercel.com)
+- [Heroku](https://dashboard.heroku.com/)
+- [GitHub(client)](https://github.com/rmac2289/hearsay-app)
+- [Github(server)](https://github.com/rmac2289/hearsay-server)
+- [Zeit/Vercel](https://vercel.com)
 
 
 
