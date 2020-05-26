@@ -1,22 +1,22 @@
-#Hearsay 
+# Hearsay 
 
 [Live App](https://hearsay-app.rmac2289.now.sh/)
 
 ---
-##Summary
+## Summary
 
 Hearsay is a web app designed to allow users to review encounters with law enforcement. The app asks the user for information about their encounter and an explanation concerning how they felt the encounter went. Hearsay also includes a discussion board with various topics across the criminal justice field where users can express their opinions.
 
 ---
 
-##API Documentation
+## API Documentation
 
-###API Root 
+### API Root 
 https://fierce-cliffs-47097.herokuapp.com/api
 
 A bearer token is required for use of the API. The token can be acquired through registering with a username and password via the register link on the navigation bar.
 
-###API Endpoints
+### API Endpoints
 
 The API has multiple endpoints:
 - /login
@@ -34,19 +34,19 @@ The API has multiple endpoints:
 
 ---
 
-##Screenshots
-
-![Home Page](/images/homepage.png)
-
-![Reviews](/images/reviews.png)
-
-![Discussion](/images/discussion.png)
+## Screenshots
+#### Home Page
+![HomePage](/images/homepage.png =250px)
+#### Reviews
+![Reviews](/images/reviews.png =250px)
+#### Discussion
+![Discussion](/images/discussion.png =250px)
 
 ---
 
-##Technologies
+## Technologies
 
-###Codebase
+### Codebase
 [React](https://reactjs.org/)
 [Node.js](https://nodejs.org/en/)
 [PostgreSQL](https://www.postgresql.org/)
@@ -54,12 +54,12 @@ The API has multiple endpoints:
 [Knex](http://knexjs.org/)
 [JWT](https://jwt.io/)
 
-###Test
+### Test
 [Mocha](https://mochajs.org/)
 [Chai](https://www.chaijs.com/)
 [Supertest](https://www.npmjs.com/package/supertest)
 
-###Deployment
+### Deployment
 [Heroku](https://dashboard.heroku.com/)
 [GitHub(client)](https://github.com/rmac2289/hearsay-app)
 [Github(server)](https://github.com/rmac2289/hearsay-server)
