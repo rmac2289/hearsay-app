@@ -18,7 +18,7 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
     <p><strong>Rating:</strong> {value.rating}</p>
     <p><strong>Review Date:</strong> {reviewDate}</p>
     <p><strong>Comments:</strong> {value.comments}</p>
-    <p><strong>User:</strong> {value.user}</p>
+    <p><strong>User:</strong> {value.user_name}</p>
     </section>
 })
 console.log(reviewsList)
