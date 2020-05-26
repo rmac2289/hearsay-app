@@ -36,11 +36,14 @@ The API has multiple endpoints:
 
 ## Screenshots
 #### Home Page
-![HomePage](/images/homepage.png =250px)
+<img src="./images/homepage.png" width="200" height="200" />
+
 #### Reviews
-![Reviews](/images/reviews.png =250px)
+<img src="./images/reviews.png" width="200" height="200" />
+
 #### Discussion
-![Discussion](/images/discussion.png =250px)
+<img src="./images/discussion.png" width="200" height="200" />
+
 
 ---
 
