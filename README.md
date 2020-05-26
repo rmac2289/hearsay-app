@@ -36,13 +36,14 @@ The API has multiple endpoints:
 
 ## Screenshots
 #### Home Page
-<img src="./images/homepage.png" width="200" height="200" />
+<img src="./images/.png" max-width="600"/>
 
 #### Reviews
-<img src="./images/reviews.png" width="200" height="200" />
+<img src="./images/Screen Shot 2020-05-26 at 2.28.26 PM.png" max-width="600"/>
+<img src="./images/Screen Shot 2020-05-26 at 2.19.19 PM.png" max-width="600"/>
 
 #### Discussion
-<img src="./images/discussion.png" width="200" height="200" />
+<img src="./images/Screen Shot 2020-05-26 at 2.30.34 PM.png" max-width="600"/>
 
 
 ---
