@@ -9,7 +9,9 @@
     opacity: 1;
   }
 }
-
+.burgerDiv {
+    display: flex;
+}
 @keyframes slideIn {
   0% {
     transform: translateX(-2%);

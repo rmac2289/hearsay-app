@@ -15,7 +15,7 @@ function App() {
   return (
     <main className='App'>
       <Switch>
-      <Route exact path='/Home' component={Landing} />
+      <Route exact path='/' component={Landing} />
       <PublicRoute path='/Login' component={Login}/>
       <PrivateRoute path='/Reviews' component={Departments}/>
       <Route exact path='/singlereview' component={Review} />

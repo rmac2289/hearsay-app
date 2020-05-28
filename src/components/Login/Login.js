@@ -13,7 +13,7 @@ export default class LoginForm extends Component {
 
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
-      this.props.history.push('/Home');
+      this.props.history.push('/');
     }
 
   state= {

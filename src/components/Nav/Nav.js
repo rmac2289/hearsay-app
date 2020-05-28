@@ -19,7 +19,7 @@ export default class Nav extends Component {
             <Link
               className="navLink"
               onClick={this.handleLogoutClick}
-              to='/Home'
+              to='/'
               >
               Logout
             </Link>
@@ -40,7 +40,7 @@ export default class Nav extends Component {
         <nav>
             <h5 id="linkLogo"><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
             <ul>{TokenService.hasAuthToken() ? this.renderLogoutLink():this.renderLoginLink()}
-                <li><Link className="navLink" to='/Home'>Home</Link></li>
+                <li><Link className="navLink" to='/'>Home</Link></li>
                 <li><Link className="navLink" to='/Reviews'>Reviews</Link></li>
                 <li><Link className="navLink" to='/Forum'>Forum</Link></li>
             </ul>

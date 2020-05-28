@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 import TokenService from '../../services/token-service'
 
+
 class Burger extends Component {
     constructor(props){
       super(props);

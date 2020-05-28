@@ -44,7 +44,8 @@ export default class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <>
-      {window.innerWidth < 520 ? <Burger />: <Nav />}
+      <Burger />
+      <Nav />
         <section className="signupSection">
             <header className="signupHeader">
                 <h1>register & join the conversation</h1>
