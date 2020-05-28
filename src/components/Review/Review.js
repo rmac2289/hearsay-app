@@ -4,7 +4,10 @@ import moment from 'moment'
 
 
 export default function Review(props){
-    
+const scrollDown = () => {
+    const element = document.getElementById("banner")
+    element.scrollIntoView({behavior: "smooth"})
+}
 const filtered = props.department
 const reviewsList = props.reviews.filter(review => review.department === filtered).map((value, index) => {
     const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
@@ -20,10 +23,11 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
     </section>
 })
     return(
-        <div>
+        <div id="Review">
             <header className="reviewHeader">
                 <h1 id="reviewHeader">Reviews</h1>
             </header>
+            <div className="write"><div id="write" onClick={scrollDown}>write review</div></div>
             {reviewsList.length > 0 ? reviewsList : <section id="nobody"><h3>Looks like nobody has reviewed this agency yet!</h3></section>}
         </div>
     )

@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer'
 import Burger from '../Burger/Burger'
 import DiscussionApiService from '../../services/article-api-service'
 
-export default function Departments(){
+export default function Departments(props){
     const [setSelect, setSelectState] = useState("")
     const [setDeptSelect, setDeptSelectState] = useState("")
     const [reviews, setReviews] = useState([])
@@ -43,8 +43,10 @@ export default function Departments(){
     const depts = Agencies.States[setSelect]
     return (   
         <>
-         {window.innerWidth < 520 ? <Burger />: <Nav />}    
+         <Burger />
+         <Nav />    
         <div>
+            <div className={setDeptSelect !== '' && setDeptSelect !== 'choose department' ? "hidden":""}>
             <header className="departmentsHeader">
                 <h1 id="agency">agency finder</h1>
             </header>
@@ -61,7 +63,11 @@ export default function Departments(){
                     return <option value={value} key={index}>{value}</option>})} 
                 </select>
                 </section>
-            {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><WriteReview handleAddReview={handleAddReview} onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/><Review reviews={reviews}department={setDeptSelect}/></>}
+                </div>
+                <div>
+            {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><Review reviews={reviews}department={setDeptSelect}/><WriteReview handleAddReview={handleAddReview} onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/></>}
+            </div>
+            
         </div>
         <Footer />
         </>

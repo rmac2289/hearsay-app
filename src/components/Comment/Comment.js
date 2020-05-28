@@ -2,13 +2,10 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import './Comment.css'
-import moment from 'moment'
 
 export default function Post(props){
     const [count, setCount] = useState(0)
     const [dislikeCount, setDislikeCount] = useState(0)
-
-    const parsedDate = moment(props.date).format("dddd, MMMM Do YYYY")
     
     const addLike = () => {
         setCount(count + 1 );
@@ -29,7 +26,7 @@ export default function Post(props){
             </div>
           </div>
           <div><strong>posted by:</strong> {props.user}</div>
-          <div><strong>on:</strong> {parsedDate}</div>
+          <div><strong>on:</strong> {props.date}</div>
       </li>
     )
 }

@@ -4,7 +4,7 @@ import './Footer.css'
 
 export default function Footer(props){
     return (
-        <footer>
+        <footer id="Footer">
             <div className="footerText">
             <p>© 2020 Ross MacDonald</p>
             </div>

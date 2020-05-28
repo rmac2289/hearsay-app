@@ -14,7 +14,7 @@ export default function About(props){
                 </header>
                 <p>Hearsay allows you to get your voice out regarding contacts with law enforcement and the criminal justice system. This isn't simply a place to complain - no matter the nature of the experience; good, bad, ugly - this is the place to make yourself heard. If you're already signed up, click below to leave a review - if not, scroll down and get yourself signed up!</p>
                 <div className="reviewLink">
-                <Button><Link id="aboutLink" to='/departments'>rate your encounter</Link></Button>
+                <Button><Link id="aboutLink" to='/Reviews'>rate your encounter</Link></Button>
                 </div>
             </section>
     )

@@ -32,6 +32,7 @@ export default function WriteReview(props) {
     }
    
     const handleSubmit = (e) => {
+    const element = document.getElementById('Review')
       e.preventDefault();
       const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`
       const review_fields = {
@@ -48,14 +49,16 @@ export default function WriteReview(props) {
         return;
       }
         props.handleAddReview(e, review_fields);
+        element.scrollIntoView({behavior: "smooth"})
     }
+    
 
     return (
         <main>
+            <section className="section">
             <header id="banner">
                 <h1 className="newHeader">New Review</h1>
             </header>
-            <section className="section">
                 <form className="reviewForm ReviewForm" onSubmit={handleSubmit} >
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="state"><strong>State:</strong></label>
@@ -67,11 +70,11 @@ export default function WriteReview(props) {
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="nature"><strong>What led to the encounter?</strong></label>
-                        <Textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="5" required />
+                        <Textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="4" required />
                     </div>
                     <div className="form-section">
                         <label className="reviewLabel" htmlFor="comments"><strong>Comments:</strong></label>
-                        <Textarea onChange={getCommentsText} value={setComments} className="reviewTextarea" name="comments" rows="15" />
+                        <Textarea onChange={getCommentsText} value={setComments} className="reviewTextarea" name="comments" rows="6" />
                     </div>
                     <div className="form-section">
                         <div >
