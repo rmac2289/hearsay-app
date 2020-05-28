@@ -5,6 +5,8 @@ import TokenService from '../services/token-service'
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
   return (
+    /* Private router redirects to login page when non-logged in user attempts to 
+    access reviews or discussion board */
     <Route
       {...props}
       render={componentProps => (

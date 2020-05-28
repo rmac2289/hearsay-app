@@ -7,7 +7,8 @@ import TokenService from '../../services/token-service'
 
 
 export default class Nav extends Component {
-   
+
+   // remove user's auth token on logout //
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         sessionStorage.removeItem('username')
@@ -39,6 +40,8 @@ export default class Nav extends Component {
         <>
         <nav>
             <h5 id="linkLogo"><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
+
+            {/* render logout link if user has auth token, login link if no token */}
             <ul>{TokenService.hasAuthToken() ? this.renderLogoutLink():this.renderLoginLink()}
                 <li><Link className="navLink" to='/'>Home</Link></li>
                 <li><Link className="navLink" to='/Reviews'>Reviews</Link></li>

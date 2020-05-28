@@ -13,6 +13,8 @@ export default function Departments(props){
     const [setDeptSelect, setDeptSelectState] = useState("")
     const [reviews, setReviews] = useState([])
 
+    /* handle reviews POST request, renders new review on page 
+    without needing response from server */
     const handleAddReview = (ev, review) => {
         ev.preventDefault();
         const newReviews = reviews.concat([review]);
@@ -36,6 +38,7 @@ export default function Departments(props){
     function deptSelectChange(event){
         setDeptSelectState(event.target.value)
     }
+
     const states = Object.keys(Agencies.States)
     const stateList = states.map((value, index) => {
         return <option key={index} value={value}>{value}</option>    
@@ -58,6 +61,7 @@ export default function Departments(props){
                     {stateList} 
                 </select>
                 <select onChange={deptSelectChange} className="select">
+                    {/* lists agencies in select menu and sorts in alphabetical order */}
                     {setSelect !== "" && <option defaultValue="choose department">choose department</option>}
                     {setSelect !== "" && depts.sort().map((value, index) => {
                     return <option value={value} key={index}>{value}</option>})} 
@@ -65,6 +69,7 @@ export default function Departments(props){
                 </section>
                 </div>
                 <div>
+                {/* display reviews and review form once user selects state and department */}
             {(setDeptSelect !== '' && setDeptSelect !== 'choose department') && <><Review reviews={reviews}department={setDeptSelect}/><WriteReview handleAddReview={handleAddReview} onChangeState={selectChange} onChangeDept={deptSelectChange} state={setSelect} deptName={setDeptSelect}/></>}
             </div>
             

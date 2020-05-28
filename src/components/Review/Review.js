@@ -8,6 +8,7 @@ const scrollDown = () => {
     const element = document.getElementById("banner")
     element.scrollIntoView({behavior: "smooth"})
 }
+// filter results so only reviews that match the selected department are rendered //
 const filtered = props.department
 const reviewsList = props.reviews.filter(review => review.department === filtered).map((value, index) => {
     const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
@@ -28,6 +29,7 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
                 <h1 id="reviewHeader">Reviews</h1>
             </header>
             <div className="write"><div id="write" onClick={scrollDown}>write review</div></div>
+            {/* conditionally render list of reviews if reviews exist */}
             {reviewsList.length > 0 ? reviewsList : <section id="nobody"><h3>Looks like nobody has reviewed this agency yet!</h3></section>}
         </div>
     )

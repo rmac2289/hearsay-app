@@ -9,10 +9,6 @@ import Footer from '../Footer/Footer'
 
 
 export default class RegistrationForm extends Component {
-  static defaultProps = {
-    onRegistrationSuccess: () => {
-    }
-  }
 
   state = { error: null, success: null }
 
@@ -32,7 +28,6 @@ export default class RegistrationForm extends Component {
     nick_name.value = ''
     user_name.value = ''
     password.value = ''
-    this.props.onRegistrationSuccess()
     this.setState({ success: true })
 })
   .catch(res => {

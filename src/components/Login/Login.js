@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer'
 
 export default class LoginForm extends Component {
 
+  // set username in session storage and redirect to homepage on login //
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
       this.props.history.push('/');
@@ -20,7 +21,7 @@ export default class LoginForm extends Component {
     error: null,
     loggedIn: null
   }
-  
+  // handles login and authentication //
   handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       this.setState({error: null})

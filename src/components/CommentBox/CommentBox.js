@@ -6,7 +6,6 @@ import DiscussionApiService from '../../services/article-api-service'
 
 export default function CommentBox(props) {
     const [posts, setPosts] = useState([])
-    const [topics, setTopics] = useState([])
 
     useEffect(() => {
         DiscussionApiService.getDiscussions()
@@ -24,12 +23,6 @@ export default function CommentBox(props) {
             .catch(error => console.error(error));
     }
     
-
-    useEffect(() => {
-        DiscussionApiService.getTopics()
-            .then(data => setTopics(data))
-            .catch((error) => { console.error('Error:', error) })
-    },[])
         return (
             <div>
                 <header className="forumHeader">

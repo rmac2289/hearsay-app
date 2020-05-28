@@ -5,6 +5,7 @@ import moment from 'moment'
 
 export default class CommentList extends Component {
     render() {
+    // filter posts to render only those that match the selected topic //
     const posts = this.props.data
     const postList = posts.filter(post => post.topic_name === this.props.current_topic).map((value,index) => {
       return <Comment key={index} values={value.id} date={moment(value.date_created).format("dddd, MMMM Do YYYY")} user={value.user_name} text={value.discussion_post} />

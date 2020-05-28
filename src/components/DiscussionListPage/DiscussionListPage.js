@@ -19,9 +19,11 @@ export default class DiscussionListPage extends Component {
       .then(data => this.setState({topics: data}))
       .catch((error) => { console.error('Error:', error) })
   }
+  // get topic user is clicking on //
   currentTopic = (event) => this.setState({ current_topic: event.target.value })
 
   render() {
+    // render list of discussion topics //
     const list = this.state.topics
     const listItems = list.map((value, index) => {
   return  <li className="topicList" key={index} onClick={this.currentTopic}>
