@@ -65,7 +65,7 @@ class Burger extends Component {
       const menuItems = menu.map((val,index)=>{
         return (
           <MenuItem 
-            route={val === 'Logout' ? 'Home':val}
+            route={val === 'Logout' || val === 'Home' ? '/':val}
             key={index} 
             delay={`${index * 0.1}s`}
             onClick={val === 'Logout' ? this.handleLogoutClick : ()=>{this.handleLinkClick();}}>{val}</MenuItem>)
