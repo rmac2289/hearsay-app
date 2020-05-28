@@ -9,6 +9,7 @@ import PrivateRoute from '../../Utils/privateRoute'
 import PublicRoute from '../../Utils/publicRoute'
 import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
 import NotFound from '../NotFound/NotFound'
+import TokenService from '../../services/token-service'
 
 function App() {
   
@@ -17,9 +18,9 @@ function App() {
       <Switch>
       <Route exact path='/' component={Landing} />
       <PublicRoute path='/Login' component={Login}/>
-      <PrivateRoute path='/Reviews' component={Departments}/>
+      <Route path='/Reviews' component={TokenService.hasAuthToken() ? Departments:Login}/>
       <Route exact path='/singlereview' component={Review} />
-      <PrivateRoute path='/Forum' component={DiscussionListPage} />
+      <Route path='/Forum' component={TokenService.hasAuthToken() ? DiscussionListPage:Login} />
       <PublicRoute path='/Register' component={Signup} />
       <Route component={NotFound}/>
       </Switch>
