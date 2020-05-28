@@ -7,22 +7,19 @@ import TokenService from '../../services/token-service'
 
 
 export default class Nav extends Component {
-    timeOutWelcome = () => {
-        return <h5 id="welcome">welcome, {sessionStorage.username}</h5>
-    }
+   
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
         sessionStorage.removeItem('username')
         this.forceUpdate()
     }
 
-
     renderLogoutLink = () => {
         return (
             <Link
               className="navLink"
               onClick={this.handleLogoutClick}
-              to='/'
+              to='/Home'
               >
               Logout
             </Link>
@@ -31,8 +28,8 @@ export default class Nav extends Component {
     renderLoginLink = () => {
         return (
             <>
-            <li><Link className="navLink" to='/login'>Login</Link></li>
-            <li><Link className="navLink" to='/signuppage'>Register</Link></li>
+            <li><Link className="navLink" to='/Login'>Login</Link></li>
+            <li><Link className="navLink" to='/Register'>Register</Link></li>
             </>
         )
       }
@@ -43,12 +40,11 @@ export default class Nav extends Component {
         <nav>
             <h5 id="linkLogo"><Link id="navLogo" to="/">hearsay <span><FontAwesomeIcon id="bullhorn" icon={faBullhorn}/></span></Link></h5>
             <ul>{TokenService.hasAuthToken() ? this.renderLogoutLink():this.renderLoginLink()}
-                <li><Link className="navLink" to='/'>Home</Link></li>
-                <li><Link className="navLink" to='/departments'>Reviews</Link></li>
-                <li><Link className="navLink" to='/forum'>Forum</Link></li>
+                <li><Link className="navLink" to='/Home'>Home</Link></li>
+                <li><Link className="navLink" to='/Reviews'>Reviews</Link></li>
+                <li><Link className="navLink" to='/Forum'>Forum</Link></li>
             </ul>
         </nav>
-        {TokenService.hasAuthToken() && this.timeOutWelcome()}
         </>
     )
       }

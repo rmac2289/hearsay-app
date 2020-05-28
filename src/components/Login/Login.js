@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../../Utils/Utils'
 import { Link } from 'react-router-dom'
+import Burger from '../Burger/Burger'
 import './Login.css'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
@@ -12,7 +13,7 @@ export default class LoginForm extends Component {
 
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
-      this.props.history.push('/');
+      this.props.history.push('/Home');
     }
 
   state= {
@@ -43,7 +44,8 @@ export default class LoginForm extends Component {
    render(){
     return (
       <>
-      <Nav />
+       <Burger />
+       <Nav />
         <section className="forgot">
           <h4 id="access">log in to access reviews and discussion forum!</h4>
       <form onSubmit={this.handleSubmitJwtAuth}>
@@ -74,7 +76,7 @@ export default class LoginForm extends Component {
         <Button type='submit'>
           Login
         </Button>
-        <h4><Link id="loginSignup" to='/signuppage'>First time? Register here</Link></h4>
+        <h4><Link id="loginSignup" to='/Register'>First time? Register here</Link></h4>
       </form>
       </section>
       <Footer />

@@ -13,7 +13,7 @@ export default function Community(props){
                 </p>
                 <div className="citySearch">
                 <div>
-                    <Button><Link id="showMe" to="/departments">show me reviews</Link></Button>
+                    <Button><Link id="showMe" to="/Reviews">show me reviews</Link></Button>
                 </div>
                 </div>
         </section>

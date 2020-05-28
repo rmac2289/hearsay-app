@@ -15,12 +15,12 @@ function App() {
   return (
     <main className='App'>
       <Switch>
-      <Route exact path='/' component={Landing} />
-      <PublicRoute path='/login' component={Login}/>
-      <PrivateRoute path='/departments' component={Departments}/>
+      <Route exact path='/Home' component={Landing} />
+      <PublicRoute path='/Login' component={Login}/>
+      <PrivateRoute path='/Reviews' component={Departments}/>
       <Route exact path='/singlereview' component={Review} />
-      <PrivateRoute path='/forum' component={DiscussionListPage} />
-      <PublicRoute path='/signuppage' component={Signup} />
+      <PrivateRoute path='/Forum' component={DiscussionListPage} />
+      <PublicRoute path='/Register' component={Signup} />
       <Route component={NotFound}/>
       </Switch>
       

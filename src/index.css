@@ -11,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* background: linear-gradient(68deg,rgb(0,0,128,0.1) 50%, rgb(211,211,211,0.2) 50%) */
-  padding-top: 175px;
+  padding-top: 50px;
   
 }
 ul {
@@ -25,4 +25,10 @@ code {
   body {
     padding-top: 115px;
   }
+}
+@media only screen and (min-width: 520px){
+  
+    body {
+      padding-top: 175px;
+    }
 }

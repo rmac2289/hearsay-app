@@ -3,6 +3,7 @@ import DiscussionApiService from '../../services/article-api-service'
 import './DiscussionListPage.css'
 import { Button } from '../../Utils/Utils'
 import Nav from '../Nav/Nav'
+import Burger from '../Burger/Burger'
 import Footer from '../Footer/Footer'
 import CommentBox from '../CommentBox/CommentBox'
 
@@ -29,6 +30,7 @@ export default class DiscussionListPage extends Component {
     })
     return (
       <>
+      <Burger />
       <Nav />
       <header className="forumHeader">
           <h1 id="forumHeader">discussion</h1>

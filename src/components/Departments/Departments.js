@@ -5,6 +5,7 @@ import WriteReview from '../WriteReview/WriteReview'
 import Review from '../Review/Review'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
+import Burger from '../Burger/Burger'
 import DiscussionApiService from '../../services/article-api-service'
 
 export default function Departments(){
@@ -42,7 +43,7 @@ export default function Departments(){
     const depts = Agencies.States[setSelect]
     return (   
         <>
-        <Nav />     
+         {window.innerWidth < 520 ? <Burger />: <Nav />}    
         <div>
             <header className="departmentsHeader">
                 <h1 id="agency">agency finder</h1>

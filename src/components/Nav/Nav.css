@@ -16,12 +16,12 @@ nav {
   border-bottom: 2px solid rgb(255,255,255,0.8);
   border-bottom-right-radius: 30%;
   border-bottom-left-radius: 30%;
-  display: flex;
   flex-direction: column;
   position: fixed;
   top:0;
   width: 100%;
   align-items: center;
+  display: none;
  
 }
 #welcome {
@@ -74,6 +74,11 @@ nav > ul {
   nav > ul {
     flex-direction: row;
     justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 520px){
+  nav {
+    display: flex;
   }
 }
 
