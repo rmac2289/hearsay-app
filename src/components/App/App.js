@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from '../Landing/Landing'
 import Login from '../Login/Login'
 import Review from '../Review/Review'
@@ -9,6 +9,7 @@ import PublicRoute from '../../Utils/publicRoute'
 import PrivateRoute from '../../Utils/privateRoute'
 import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
 import NotFound from '../NotFound/NotFound'
+import TokenService from '../../services/token-service';
 
 
 function App() {
@@ -18,9 +19,13 @@ function App() {
       <Switch>
       <Route exact path='/' component={Landing} />
       <PublicRoute path='/Login' component={Login}/>
-      <PrivateRoute path='/Reviews' component={Departments}/>
+      <Route exact path='/Reviews'>
+      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <Departments />}
+      </Route>
       <Route exact path='/singlereview' component={Review} />
-      <PrivateRoute path='/Forum' component={DiscussionListPage} />
+      <Route path='/Forum'>
+      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <DiscussionListPage />}
+      </Route>
       <PublicRoute path='/Register' component={Signup} />
       <Route component={NotFound}/>
       </Switch>
