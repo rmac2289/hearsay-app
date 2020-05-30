@@ -49,7 +49,7 @@ export default function WriteReview(props) {
         return;
       }
         props.handleAddReview(e, review_fields);
-        element.scrollIntoView({behavior: "smooth"})
+        element.scrollIntoView({block: "nearest", behavior: "smooth"})
     }
     
 

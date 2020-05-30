@@ -24,13 +24,14 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
     </section>
 })
     return(
-        <div id="Review">
+        <div>
             <header className="reviewHeader">
                 <h1 id="reviewHeader">Reviews</h1>
             </header>
             <div className="write"><div id="write" onClick={scrollDown}>write review</div></div>
             {/* conditionally render list of reviews if reviews exist */}
             {reviewsList.length > 0 ? reviewsList : <section id="nobody"><h3>Looks like nobody has reviewed this agency yet!</h3></section>}
+            <div id="Review"></div>
         </div>
     )
 }
