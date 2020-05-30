@@ -19,13 +19,9 @@ function App() {
       <Switch>
       <Route exact path='/' component={Landing} />
       <PublicRoute path='/Login' component={Login}/>
-      <Route exact path='/Reviews'>
-      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <Departments />}
-      </Route>
+      <Route exact path='/Reviews' render={() => !TokenService.hasAuthToken() ? <Redirect to="/Login"/>: <Departments />}/>
       <Route exact path='/singlereview' component={Review} />
-      <Route path='/Forum'>
-      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <DiscussionListPage />}
-      </Route>
+      <Route path='/Forum' render={() => !TokenService.hasAuthToken() ? <Redirect to="/Login"/>: <DiscussionListPage />}/>
       <PublicRoute path='/Register' component={Signup} />
       <Route component={NotFound}/>
       </Switch>
