@@ -20,11 +20,11 @@ function App() {
       <Route exact path='/' component={Landing} />
       <PublicRoute path='/Login' component={Login}/>
       <Route exact path='/Reviews'>
-      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <Redirect to="/Reviews"/>}
+      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <Departments />}
       </Route>
       <Route exact path='/singlereview' component={Review} />
       <Route path='/Forum'>
-      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <Redirect to="/Forum"/>}
+      {!TokenService.hasAuthToken() ? <Redirect to="/Login" /> : <DiscussionListPage />}
       </Route>
       <PublicRoute path='/Register' component={Signup} />
       <Route component={NotFound}/>
