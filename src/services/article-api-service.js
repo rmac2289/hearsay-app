@@ -1,5 +1,5 @@
-import TokenService from '../services/token-service'
-import config from '../config'
+import TokenService from '../services/token-service';
+import config from '../config';
 
 const DiscussionApiService = {
   getDiscussions() {
@@ -11,7 +11,7 @@ const DiscussionApiService = {
         if(!response.ok){
             return response.json().then(e => Promise.reject(e))
         }
-        return response.json()
+        return response.json();
     })
   },
   getTopics() {
@@ -23,8 +23,8 @@ const DiscussionApiService = {
         if(!response.ok){
             return response.json().then(e => Promise.reject(e))
         }
-        return response.json()
-    })
+        return response.json();
+    });
   },
   getDiscussion(discussionId) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}`, {
@@ -36,7 +36,7 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   getDiscussionComments(discussionId) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}/comments`, {
@@ -48,7 +48,7 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   postComment(topic_name, discussion_post) {
     return fetch(`${config.API_ENDPOINT}/discussion`, {
@@ -66,7 +66,7 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   getReviews(){
     return fetch(`${config.API_ENDPOINT}/reviews`, {
@@ -77,7 +77,7 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   getReview(reviewId){
     return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
@@ -89,7 +89,7 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   postReview(state, department, nature, rating, comments, incident_date ){
     return fetch(`${config.API_ENDPOINT}/reviews`, {
@@ -111,8 +111,8 @@ const DiscussionApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   }
-}
+};
 
-export default DiscussionApiService
+export default DiscussionApiService;

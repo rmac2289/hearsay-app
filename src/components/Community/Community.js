@@ -1,7 +1,7 @@
-import React from 'react'
-import './Community.css'
-import { Link } from 'react-router-dom'
-import { Button } from '../../Utils/Utils'
+import React from 'react';
+import './Community.css';
+import { Link } from 'react-router-dom';
+import { Button } from '../../Utils/Utils';
 
 export default function Community(props){
     return (
@@ -17,5 +17,5 @@ export default function Community(props){
                 </div>
                 </div>
         </section>
-    )
-}
+    );
+};

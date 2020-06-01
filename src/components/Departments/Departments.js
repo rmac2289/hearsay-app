@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import './Departments.css'
-import Agencies from '../../Agencies'
-import WriteReview from '../WriteReview/WriteReview'
-import Review from '../Review/Review'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
-import Burger from '../Burger/Burger'
-import DiscussionApiService from '../../services/article-api-service'
+import React, { useState, useEffect } from 'react';
+import './Departments.css';
+import Agencies from '../../Agencies';
+import WriteReview from '../WriteReview/WriteReview';
+import Review from '../Review/Review';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
+import Burger from '../Burger/Burger';
+import DiscussionApiService from '../../services/article-api-service';
 
-export default function Departments(props){
-    const [setSelect, setSelectState] = useState("")
-    const [setDeptSelect, setDeptSelectState] = useState("")
-    const [reviews, setReviews] = useState([])
+export default function Departments(){
+    const [setSelect, setSelectState] = useState("");
+    const [setDeptSelect, setDeptSelectState] = useState("");
+    const [reviews, setReviews] = useState([]);
 
     /* handle reviews POST request, renders new review on page 
     without needing response from server */
@@ -22,28 +22,28 @@ export default function Departments(props){
         DiscussionApiService.postReview(setSelect, setDeptSelect, review.nature, review.rating, review.comments, review.incident_date )
             .then(setReviews(newReviews))
             .catch(error => console.error(error));
-    }
+    };
 
     useEffect(() => {
         DiscussionApiService.getReviews()
             .then(data => {
                 setReviews(data);
             })
-            .catch(error => console.error(error))
-    }, [])
+            .catch(error => console.error(error));
+    }, []);
 
     function selectChange(event){
-        setSelectState(event.target.value)
-    }
+        setSelectState(event.target.value);
+    };
     function deptSelectChange(event){
-        setDeptSelectState(event.target.value)
-    }
+        setDeptSelectState(event.target.value);
+    };
 
-    const states = Object.keys(Agencies.States)
+    const states = Object.keys(Agencies.States);
     const stateList = states.map((value, index) => {
         return <option key={index} value={value}>{value}</option>    
-    })
-    const depts = Agencies.States[setSelect]
+    });
+    const depts = Agencies.States[setSelect];
     return (   
         <>
          <Burger />
@@ -76,5 +76,5 @@ export default function Departments(props){
         </div>
         <Footer />
         </>
-    )
-}
+    );
+};

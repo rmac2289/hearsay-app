@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Button, Input } from '../../Utils/Utils'
-import { Link } from 'react-router-dom'
-import Burger from '../Burger/Burger'
-import './Login.css'
-import TokenService from '../../services/token-service'
-import AuthApiService from '../../services/auth-api-service'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
+import React, { Component } from 'react';
+import { Button, Input } from '../../Utils/Utils';
+import { Link } from 'react-router-dom';
+import Burger from '../Burger/Burger';
+import './Login.css';
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 
 export default class LoginForm extends Component {
@@ -15,17 +15,17 @@ export default class LoginForm extends Component {
   onLoginSuccess = (user_name) => {
       sessionStorage.setItem('username', user_name.value);
       this.props.history.push('/');
-    }
+    };
 
   state= {
     error: null,
     loggedIn: null
-  }
+  };
   // handles login and authentication //
   handleSubmitJwtAuth = ev => {
-      ev.preventDefault()
-      this.setState({error: null})
-      const { user_name, password } = ev.target
+      ev.preventDefault();
+      this.setState({error: null});
+      const { user_name, password } = ev.target;
     
       AuthApiService.postLogin({
         user_name: user_name.value,
@@ -40,8 +40,8 @@ export default class LoginForm extends Component {
           password.value = ''
           
         })
-        .catch(res => this.setState({error: res.error}))
-    } 
+        .catch(res => this.setState({error: res.error}));
+    };
    render(){
     return (
       <>
@@ -82,7 +82,7 @@ export default class LoginForm extends Component {
       </section>
       <Footer />
       </>
-    )
-  }
-}
+    );
+  };
+};
 

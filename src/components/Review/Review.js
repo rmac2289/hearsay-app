@@ -1,18 +1,18 @@
-import React from 'react'
-import './Review.css'
-import moment from 'moment'
+import React from 'react';
+import './Review.css';
+import moment from 'moment';
 
 
 export default function Review(props){
 const scrollDown = () => {
-    const element = document.getElementById("banner")
-    element.scrollIntoView({behavior: "smooth"})
-}
+    const element = document.getElementById("banner");
+    element.scrollIntoView({behavior: "smooth"});
+};
 // filter results so only reviews that match the selected department are rendered //
-const filtered = props.department
+const filtered = props.department;
 const reviewsList = props.reviews.filter(review => review.department === filtered).map((value, index) => {
-    const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY")
-    const reviewDate = moment(value.review_date).format("dddd, MMMM Do YYYY")
+    const incidentDate = moment(value.incident_date).format("dddd, MMMM Do YYYY");
+    const reviewDate = moment(value.review_date).format("dddd, MMMM Do YYYY");
     return <section key={index} className="reviewSection">
     <p><strong>State:</strong> {value.state}</p>
     <p><strong>Department:</strong> {value.department}</p>
@@ -22,7 +22,7 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
     <p><strong>Review Date:</strong> {reviewDate}</p>
     <p><strong>Comments:</strong> {value.comments}</p>
     </section>
-})
+});
     return(
         <div>
             <header className="reviewHeader">
@@ -33,5 +33,5 @@ const reviewsList = props.reviews.filter(review => review.department === filtere
             {reviewsList.length > 0 ? reviewsList : <section id="nobody"><h3>Looks like nobody has reviewed this agency yet!</h3></section>}
             <div id="Review"></div>
         </div>
-    )
-}
+    );
+};

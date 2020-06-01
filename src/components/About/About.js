@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './About.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
-import { Button } from '../../Utils/Utils'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './About.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import { Button } from '../../Utils/Utils';
 
 
-export default function About(props){
+export default function About(){
     return (
         <section>
                 <header>
@@ -17,5 +17,5 @@ export default function About(props){
                 <Button><Link id="aboutLink" to='/Reviews'>rate your encounter</Link></Button>
                 </div>
             </section>
-    )
-}
+    );
+};

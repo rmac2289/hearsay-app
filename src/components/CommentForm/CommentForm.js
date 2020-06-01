@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import { Textarea, Button } from '../../Utils/Utils'
+import React, { Component } from 'react';
+import { Textarea, Button } from '../../Utils/Utils';
 
 export default class CommentForm extends Component {
     state = {
         discussion_post: ''
-    }
+    };
     getInitialState = () => {
       return {discussion_post: ''};
-    }
+    };
     handleTextChange = (e) => {
       this.setState({discussion_post: e.target.value});
-    }
+    };
     handleSubmit = (e) => {
       e.preventDefault();
       const text = {
@@ -18,12 +18,12 @@ export default class CommentForm extends Component {
           discussion_post: this.state.discussion_post,
           user_name: sessionStorage.getItem('username'),
           topic_name: this.props.current_topic
-      }
+      };
       if (!text) {
         return;
       }
       this.props.onPostSubmit(e, text);
-    }
+    };
     render() {
       return (
           <section>
@@ -39,5 +39,5 @@ export default class CommentForm extends Component {
         </form>
         </section>
       );
-    }
+    };
   };

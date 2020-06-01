@@ -1,10 +1,10 @@
 
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Burger.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
-import TokenService from '../../services/token-service'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Burger.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import TokenService from '../../services/token-service';
 
 // hamburger nav component for screens smaller than 520px in width //
 class Burger extends Component {
@@ -12,21 +12,21 @@ class Burger extends Component {
       super(props);
       this.state={
         menuOpen:false,
-      }
-    }
+      };
+    };
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
-        sessionStorage.removeItem('username')
-        this.forceUpdate()
-    }
+        TokenService.clearAuthToken();
+        sessionStorage.removeItem('username');
+        this.forceUpdate();
+    };
     
     handleMenuClick() {
       this.setState({menuOpen:!this.state.menuOpen});
-    }
+    };
     
     handleLinkClick() {
       this.setState({menuOpen: false});
-    }
+    };
     
     render(){
       const styles= 
@@ -60,8 +60,8 @@ class Burger extends Component {
             filter: this.state.menuOpen ? 'blur(2px)':null,
             transition: 'filter 0.5s ease',
           },
-        }
-      const menu = !sessionStorage.getItem('username') ? ['Login','Register','Reviews','Forum', 'Home']:['Logout','Reviews', 'Forum', 'Home']
+        };
+      const menu = !sessionStorage.getItem('username') ? ['Login','Register','Reviews','Forum', 'Home']:['Logout','Reviews', 'Forum', 'Home'];
       const menuItems = menu.map((val,index)=>{
         return (
           <MenuItem 
@@ -84,9 +84,9 @@ class Burger extends Component {
           <div style={styles.body}>
           </div>
         </div>
-      )
-    }
-  }
+      );
+    };
+  };
   
   
   class MenuItem extends Component{
@@ -94,12 +94,12 @@ class Burger extends Component {
       super(props);
       this.state = {
         hover:false,
-      }
-    }
+      };
+    };
     
-    handleHover(){
+    handleHover = () => {
       this.setState({hover:!this.state.hover});
-    }
+    };
     
     render(){
       const styles={
@@ -130,7 +130,7 @@ class Burger extends Component {
           animationDelay:this.props.delay,
           
         }
-      }
+      };
       return(
         <div style={styles.container}>
           <Link 
@@ -145,9 +145,9 @@ class Burger extends Component {
           </Link>
         <div style={styles.line}/>
       </div>  
-      )
-    }
-  }
+      );
+    };
+  };
   
 
   class Menu extends React.Component {
@@ -155,14 +155,14 @@ class Burger extends Component {
       super(props);
       this.state={
         open: this.props.open? this.props.open:false,
-      }
-    }
+      };
+    };
       
     UNSAFE_componentWillReceiveProps(nextProps){
       if(nextProps.open !== this.state.open){
         this.setState({open:nextProps.open});
-      }
-    }
+      };
+    };
     
     render(){
       const styles={
@@ -193,9 +193,9 @@ class Burger extends Component {
               </div>:null
           }
         </div>
-      )
-    }
-  }
+      );
+    };
+  };
   
   class MenuButton extends React.Component {
     constructor(props){
@@ -203,18 +203,18 @@ class Burger extends Component {
       this.state={
         open: this.props.open? this.props.open:false,
         color: this.props.color? this.props.color:'black',
-      }
-    }
+      };
+    };
   
     UNSAFE_componentWillReceiveProps(nextProps){
       if(nextProps.open !== this.state.open){
         this.setState({open:nextProps.open});
-      }
-    }
+      };
+    };
     
     handleClick(){
     this.setState({open:!this.state.open});
-    }
+    };
     
     render(){
       const styles = {
@@ -248,7 +248,7 @@ class Burger extends Component {
           transformOrigin: 'top left',
           marginTop: '5px',
         },       
-      }
+      };
       return(
         <div style={styles.container} 
           onClick={this.props.onClick ? this.props.onClick: 
@@ -257,9 +257,9 @@ class Burger extends Component {
           <div style={{...styles.line,...styles.lineMiddle}}/>
           <div style={{...styles.line,...styles.lineBottom}}/>
         </div>
-      )
-    }
-  }
+      );
+    };
+  };
   
 
   export default Burger;

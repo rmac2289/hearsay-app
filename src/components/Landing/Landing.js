@@ -1,17 +1,16 @@
 import React from 'react';
-import './Landing.css'
-import Header from '../Header/Header'
-import Signup from '../Signup/Signup'
-import Community from '../Community/Community'
-import Conversation from '../Conversation/Conversation'
-import Threats from '../Threats/Threats'
-import About from '../About/About'
-import TryApp from '../TryApp/TryApp'
+import './Landing.css';
+import Header from '../Header/Header';
+import Signup from '../Signup/Signup';
+import Community from '../Community/Community';
+import Conversation from '../Conversation/Conversation';
+import Threats from '../Threats/Threats';
+import About from '../About/About';
+import TryApp from '../TryApp/TryApp';
 
 
 
 export default function Landing() {
-    
     return (
         <div className="mainDiv">
             <Header />
@@ -26,5 +25,5 @@ export default function Landing() {
             </div>
         </div>
         </div>
-    )
-}
+    );
+};

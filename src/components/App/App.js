@@ -1,14 +1,13 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import Landing from '../Landing/Landing'
-import Login from '../Login/Login'
-import Review from '../Review/Review'
-import Departments from '../Departments/Departments'
-import Signup from '../Signup/Signup'
-import PublicRoute from '../../Utils/publicRoute'
-import PrivateRoute from '../../Utils/privateRoute'
-import DiscussionListPage from '../DiscussionListPage/DiscussionListPage'
-import NotFound from '../NotFound/NotFound'
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Landing from '../Landing/Landing';
+import Login from '../Login/Login';
+import Review from '../Review/Review';
+import Departments from '../Departments/Departments';
+import Signup from '../Signup/Signup';
+import PublicRoute from '../../Utils/publicRoute';
+import DiscussionListPage from '../DiscussionListPage/DiscussionListPage';
+import NotFound from '../NotFound/NotFound';
 import TokenService from '../../services/token-service';
 
 
@@ -28,6 +27,6 @@ function App() {
       
     </main>
   );
-}
+};
 
 export default App;

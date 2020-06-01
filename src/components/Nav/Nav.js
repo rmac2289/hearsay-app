@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Nav.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
-import TokenService from '../../services/token-service'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Nav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import TokenService from '../../services/token-service';
 
 
 export default class Nav extends Component {
 
    // remove user's auth token on logout //
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
-        sessionStorage.removeItem('username')
-        this.forceUpdate()
-    }
+        TokenService.clearAuthToken();
+        sessionStorage.removeItem('username');
+        this.forceUpdate();
+    };
 
     renderLogoutLink = () => {
         return (
@@ -24,16 +24,16 @@ export default class Nav extends Component {
               >
               Logout
             </Link>
-        )
-      }
+        );
+      };
     renderLoginLink = () => {
         return (
             <>
             <li><Link className="navLink" to='/Login'>Login</Link></li>
             <li><Link className="navLink" to='/Register'>Register</Link></li>
             </>
-        )
-      }
+        );
+      };
 
       render(){
     return (
@@ -49,6 +49,6 @@ export default class Nav extends Component {
             </ul>
         </nav>
         </>
-    )
-      }
-}
+    );
+  };
+};

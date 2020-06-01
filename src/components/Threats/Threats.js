@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 export default function Threats(props){
@@ -9,5 +9,5 @@ export default function Threats(props){
                 </header>
                 <p className="violence">A haven for those who wish to threaten violence to law enforcement agencies or officials. Hearsay is meant to inspire meaningful conversation about the state of our criminal justice system and opportunities for criminal justice reform. Threats will not be tolerated and users engaging in threats will be removed. </p>
             </section>
-    )
-}
+    );
+};

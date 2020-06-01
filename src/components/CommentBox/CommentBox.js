@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import CommentList from '../CommentList/CommentList'
-import CommentForm from '../CommentForm/CommentForm'
-import DiscussionApiService from '../../services/article-api-service'
+import React, { useEffect, useState } from 'react';
+import CommentList from '../CommentList/CommentList';
+import CommentForm from '../CommentForm/CommentForm';
+import DiscussionApiService from '../../services/article-api-service';
 
 
 export default function CommentBox(props) {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         DiscussionApiService.getDiscussions()
         .then(data => setPosts(data))
-        .catch((error) => { console.error('Error:', error) })
-    }, [])
+        .catch((error) => { console.error('Error:', error) });
+    }, []);
 
     
     const handlePostSubmit = (ev, post) => {
@@ -21,7 +21,7 @@ export default function CommentBox(props) {
         DiscussionApiService.postComment(props.current_topic, post.discussion_post)
             .then(setPosts(newPosts))
             .catch(error => console.error(error));
-    }
+    };
     
         return (
             <div>
@@ -32,5 +32,5 @@ export default function CommentBox(props) {
                 <CommentForm current_topic={props.current_topic} onPostSubmit={handlePostSubmit} />
             </div>
         );
-    }
+    };
 

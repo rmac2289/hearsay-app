@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Input, Required } from '../../Utils/Utils'
-import './Signup.css'
-import AuthApiService from '../../services/auth-api-service'
-import Burger from '../Burger/Burger'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Input, Required } from '../../Utils/Utils';
+import './Signup.css';
+import AuthApiService from '../../services/auth-api-service';
+import Burger from '../Burger/Burger';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 
 export default class RegistrationForm extends Component {
 
-  state = { error: null, success: null }
+  state = { error: null, success: null };
 
   handleSubmit = ev => {
-    ev.preventDefault()
-    const { full_name, nick_name, user_name, password } = ev.target
+    ev.preventDefault();
+    const { full_name, nick_name, user_name, password } = ev.target;
 
-    this.setState({ error: null })
+    this.setState({ error: null });
     AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value,
@@ -28,15 +28,15 @@ export default class RegistrationForm extends Component {
     nick_name.value = ''
     user_name.value = ''
     password.value = ''
-    this.setState({ success: true })
+    this.setState({ success: true });
 })
   .catch(res => {
-    this.setState({ error: res.error })
-  })
-} 
+    this.setState({ error: res.error });
+  });
+};
 
   render() {
-    const { error } = this.state
+    const { error } = this.state;
     return (
       <>
       <Burger />
@@ -106,6 +106,6 @@ export default class RegistrationForm extends Component {
       </section>
       <Footer />
       </>
-    )
-  }
-}
+    );
+  };
+};

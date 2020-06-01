@@ -1,10 +1,10 @@
-import React from 'react'
-import './Conversation.css'
-import { Link } from 'react-router-dom'
-import { Button } from '../../Utils/Utils'
+import React from 'react';
+import './Conversation.css';
+import { Link } from 'react-router-dom';
+import { Button } from '../../Utils/Utils';
 
 
-export default function Conversation(props){
+export default function Conversation(){
     return (
         <section className="conversationSection">
                 <header>
@@ -15,5 +15,5 @@ export default function Conversation(props){
                 <Button><Link id="chatLink" to='/Forum'>forum</Link></Button>
                 </div>
             </section>
-    )
-}
+    );
+};

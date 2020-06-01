@@ -1,8 +1,8 @@
-import React from 'react'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
-import Burger from '../Burger/Burger'
-import './NotFound.css'
+import React from 'react';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
+import Burger from '../Burger/Burger';
+import './NotFound.css';
 
 export default function NotFound(){
     return (
@@ -14,5 +14,5 @@ export default function NotFound(){
         </section>
         <Footer />
         </>
-    )
-}
+    );
+};
