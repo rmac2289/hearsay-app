@@ -7,6 +7,8 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import { trackPromise } from 'react-promise-tracker';
+import LoadingIndicator from '../../Utils/LoadingIndicator';
 
 
 export default class LoginForm extends Component {
@@ -26,7 +28,7 @@ export default class LoginForm extends Component {
       ev.preventDefault();
       this.setState({error: null});
       const { user_name, password } = ev.target;
-    
+    trackPromise(
       AuthApiService.postLogin({
         user_name: user_name.value,
         password: password.value,
@@ -40,8 +42,8 @@ export default class LoginForm extends Component {
           password.value = ''
           
         })
-        .catch(res => this.setState({error: res.error}));
-    };
+        .catch(res => this.setState({error: res.error}))
+    )};
    render(){
     return (
       <>
@@ -75,6 +77,7 @@ export default class LoginForm extends Component {
           </Input>
         </div>
         <Button type='submit'>
+          <LoadingIndicator />
           Login
         </Button>
         <h4><Link id="loginSignup" to='/Register'>First time? Register here</Link></h4>

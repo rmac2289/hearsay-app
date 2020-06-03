@@ -6,7 +6,8 @@ import Nav from '../Nav/Nav';
 import Burger from '../Burger/Burger';
 import Footer from '../Footer/Footer';
 import CommentBox from '../CommentBox/CommentBox';
-
+import LoadingIndicator from '../../Utils/LoadingIndicator';
+import { trackPromise } from 'react-promise-tracker';
 
 export default class DiscussionListPage extends Component {
   state = {
@@ -15,9 +16,10 @@ export default class DiscussionListPage extends Component {
   };
   
   componentDidMount() {
+    trackPromise(
     DiscussionApiService.getTopics()
       .then(data => this.setState({topics: data}))
-      .catch((error) => { console.error('Error:', error) });
+      .catch((error) => { console.error('Error:', error) }));
   };
   // get topic user is clicking on //
   currentTopic = (event) => this.setState({ current_topic: event.target.value });
@@ -41,6 +43,7 @@ export default class DiscussionListPage extends Component {
             <ul id="topicList">
              {listItems}
             </ul>
+            <LoadingIndicator />
         </section>
       <CommentBox current_topic={this.state.current_topic}/>
       <Footer />
