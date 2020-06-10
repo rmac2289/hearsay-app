@@ -13,7 +13,7 @@ export default function CommentBox(props) {
         .catch((error) => { console.error('Error:', error) });
     }, []);
 
-    
+
     const handlePostSubmit = (ev, post) => {
         ev.preventDefault();
         const newPosts = posts.concat([post]);

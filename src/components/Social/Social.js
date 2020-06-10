@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Community/Community.css';
-import { TwitterShareButton, EmailShareButton, EmailIcon, RedditShareButton, RedditIcon, FacebookShareButton, generateShareIcon,TwitterIcon, FacebookIcon } from 'react-share';
+import { TwitterShareButton, EmailShareButton, EmailIcon, RedditShareButton, RedditIcon, FacebookShareButton, TwitterIcon, FacebookIcon } from 'react-share';
 import './Social.css'
 
 export default function Community(props){

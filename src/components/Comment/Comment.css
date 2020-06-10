@@ -56,3 +56,8 @@
 .likesbox p {
     margin-right: 10px;
 }
+#likebutton {
+    background: none;
+    border: none;
+    color: white;
+}

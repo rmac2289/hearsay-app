@@ -91,6 +91,39 @@ const DiscussionApiService = {
           : res.json()
       );
   },
+  patchLikes(discussion_id,likes) {
+    return fetch(`${config.API_ENDPOINT}/discussion/${discussion_id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        likes
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      );
+  },
+  patchDislikes(discussion_id, dislikes) {
+    return fetch(`${config.API_ENDPOINT}/discussion/${discussion_id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        dislikes
+      }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      );
+  },
+
   postReview(state, department, nature, rating, comments, incident_date ){
     return fetch(`${config.API_ENDPOINT}/reviews`, {
       method: 'POST',
