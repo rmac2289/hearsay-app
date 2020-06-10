@@ -15,3 +15,44 @@
     border-radius: 10px;
     padding: 1%;
 }
+.likeContainer {
+    display: flex;
+    justify-content: space-between;
+}
+#heart {
+    margin-right: 5px;
+    transition-property: all;
+    transition-duration: .75s;
+    transition-timing-function: linear;
+    font-size: 28px;
+}
+#heart:hover {
+    cursor: pointer;
+    color: rgb(245, 118, 118);
+    transform: rotate(-10deg) scale(1.2,1.2);
+}
+#thumb {
+    transition-property: all;
+    transition-duration: .75s;
+    transition-timing-function: linear;
+    font-size: 28px;
+    margin-right: 5px;
+}
+.twitter-share-button {
+    background: white;
+}
+#thumb:hover {
+    cursor: pointer;
+    color: rgb(245, 118, 118);
+    transform: rotate(10deg) scale(1.1,1.1)
+}
+.likesbox {
+    display: flex;
+    align-items: center;
+}
+.container {
+    display: flex;
+}
+.likesbox p {
+    margin-right: 10px;
+}

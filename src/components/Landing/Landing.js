@@ -7,6 +7,7 @@ import Conversation from '../Conversation/Conversation';
 import Threats from '../Threats/Threats';
 import About from '../About/About';
 import TryApp from '../TryApp/TryApp';
+import Social from '../Social/Social';
 
 
 
@@ -21,7 +22,9 @@ export default function Landing() {
                 <Community />
                 <Conversation />
                 <Threats />
+                <Social />
                 <Signup />
+                
             </div>
         </div>
         </div>
