@@ -22,9 +22,7 @@ export default function Landing() {
                 <Community />
                 <Conversation />
                 <Threats />
-                <Social />
                 <Signup />
-                
             </div>
         </div>
         </div>

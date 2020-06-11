@@ -88,7 +88,7 @@ export default function WriteReview(props) {
             </header>
                 <form className="reviewForm ReviewForm" onSubmit={handleSubmit} >
                     <div className="form-section">
-                        <label className="reviewLabel" htmlFor="state"><strong>State:</strong></label>
+                        <label className="reviewLabel" htmlFor="state"><strong>State</strong></label>
                         <Input value={props.state} onChange={props.onChangeState} className="reviewInput" type="text" name="state" required />
                     </div>
                     <div className="form-section">
@@ -100,12 +100,12 @@ export default function WriteReview(props) {
                         <Textarea onChange={getNatureText} value={setNature} className="reviewTextarea" name="nature" rows="4" required />
                     </div>
                     <div className="form-section">
-                        <label className="reviewLabel" htmlFor="comments"><strong>Comments:</strong></label>
+                        <label className="reviewLabel" htmlFor="comments"><strong>Comments</strong></label>
                         <Textarea onChange={getCommentsText} value={setComments} className="reviewTextarea" name="comments" rows="6" />
                     </div>
                     <div className="form-section">
                         <div >
-                            <label htmlFor='rating'><strong>Rating:</strong></label>
+                            <label htmlFor='rating'><strong>Rating</strong></label>
                             <select
                             value={setRating}
                             className='select'

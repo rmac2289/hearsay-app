@@ -1,8 +1,46 @@
-#fb, #twitter, #reddit {
+#fb, #twitter, #reddit, #email, #fbmessenger {
     margin-right: 15px;
+    transition: linear .5s;
+    height: 50px;
 }
-.citySearch {
+#linkedin {
+    transition: linear .5s;
+    height: 50px;
+}
+
+#fb:hover, #twitter:hover, #reddit:hover, #email:hover, #linkedin:hover, #fbmessenger:hover {
+    transform: scale(1.2,1.2)
+}
+.sharebuttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;;
+    justify-content: space-evenly;
+}
+.social {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (min-width: 720px){
+    .sharebuttons {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .friendsheader {
+        text-align: center;
+    }
+.socialsection {
+    width: 30%;
+    margin-left: 25px;
+}
+#fb, #twitter {
+    margin: 0;
+    transition: linear .5s;
+    height: 60px;
+}
+#email, #reddit, #linkedin, #fbmessenger {
+    margin-top: 20px;
+    margin-right: 0;
+    height: 60px;
+}
 }

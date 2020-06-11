@@ -56,7 +56,7 @@ export default function Departments(){
             </header>
             <section className="departmentsSection">
                 <p className="deptP">pick your state, then choose the department from the list</p>
-                <p className="deptP">once you've found what you're looking for, leave your review using the form that appears below or scroll down to check out existing reviews for that department</p>
+                <p className="deptP">once you've found what you're looking for, leave your review using the form that appears below or scroll through existing reviews for that department</p>
                 <select className="select" onChange={selectChange}>
                     <option defaultValue="find your state">find your state</option>
                     {stateList} 

@@ -6,6 +6,7 @@ import AuthApiService from '../../services/auth-api-service';
 import Burger from '../Burger/Burger';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import Social from '../Social/Social';
 
 
 export default class RegistrationForm extends Component {
@@ -39,8 +40,10 @@ export default class RegistrationForm extends Component {
     const { error } = this.state;
     return (
       <div className="registerpage">
+      
       <Burger />
       <Nav />
+      <div className="flexcontainer">
         <section className="signupSection">
             <header className="signupHeader">
                 <h1>register & join the conversation</h1>
@@ -104,6 +107,8 @@ export default class RegistrationForm extends Component {
         </div>
       </form>
       </section>
+      <Social id="social"/>
+      </div>
       <Footer />
       </div>
     );
