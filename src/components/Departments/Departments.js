@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import Burger from '../Burger/Burger';
 import DiscussionApiService from '../../services/article-api-service';
 
+
 export default function Departments(){
     const [setSelect, setSelectState] = useState("");
     const [setDeptSelect, setDeptSelectState] = useState("");

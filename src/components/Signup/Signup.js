@@ -38,7 +38,7 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <>
+      <div className="registerpage">
       <Burger />
       <Nav />
         <section className="signupSection">
@@ -105,7 +105,7 @@ export default class RegistrationForm extends Component {
       </form>
       </section>
       <Footer />
-      </>
+      </div>
     );
   };
 };

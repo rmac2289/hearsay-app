@@ -46,17 +46,17 @@ export default class LoginForm extends Component {
     )};
    render(){
     return (
-      <>
+      <div className="loginpage">
        <Burger />
        <Nav />
         <section className="forgot">
-          <h4 id="access">log in to access reviews and discussion forum!</h4>
+          <h3 id="access">log in to access reviews and discussion forum!</h3>
       <form onSubmit={this.handleSubmitJwtAuth}>
         <div role='alert'>
           {this.state.error && <p id="incorrect">{this.state.error}</p>}
         </div>
-        <div className='user_name'>
-          <label htmlFor='LoginForm__user_name'>
+        <div id="label" className='user_name'>
+          <label id="label" htmlFor='LoginForm__user_name'>
             Username
           </label>
           <Input
@@ -65,9 +65,9 @@ export default class LoginForm extends Component {
             id='LoginForm__user_name'>
           </Input>
         </div>
-        <div className='password'>
+        <div id="label" className='password'>
           <label htmlFor='LoginForm__password'>
-            Password
+           Password
           </label>
           <Input
             required
@@ -76,15 +76,15 @@ export default class LoginForm extends Component {
             id='LoginForm__password'>
           </Input>
         </div>
-        <Button type='submit'>
+        <Button id="loginsubmit" type='submit'>
           <LoadingIndicator />
           Login
         </Button>
-        <h4><Link id="loginSignup" to='/Register'>First time? Register here</Link></h4>
+        <h4><Link id="loginSignup" to='/Register'>First time? Register!</Link></h4>
       </form>
       </section>
       <Footer />
-      </>
+      </div>
     );
   };
 };

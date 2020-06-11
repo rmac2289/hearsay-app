@@ -49,9 +49,12 @@
 .likesbox {
     display: flex;
     align-items: center;
+    padding: 1%;
 }
 .container {
     display: flex;
+    border-radius: 10px;
+    border: 1px solid white;
 }
 .likesbox p {
     margin-right: 10px;

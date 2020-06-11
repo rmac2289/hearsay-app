@@ -12,7 +12,8 @@ const [dislikes,setDislikes] = useState(props.dislikes)
 
 const addLikes = () => {
   const id = props.values 
-  DiscussionApiService.patchLikes(id, likes+1)
+  const plusOne = likes + 1
+  DiscussionApiService.patchLikes(id, plusOne)
   .then(setLikes(likes + 1))
   .catch(error => console.error(error))
 }

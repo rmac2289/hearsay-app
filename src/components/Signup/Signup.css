@@ -9,7 +9,9 @@
 .signupHeader {
     text-align: center;
 }
-
+.registerpage {
+    padding-top: 40px;
+}
 #success {
     border: 1px solid #aaa;
     color: white;
@@ -46,5 +48,8 @@ button:hover {
 @media only screen and (min-width: 720px){
     input {
         width: 250px;
+    }
+    .signupSection {
+        width: 60%;
     }
 }
