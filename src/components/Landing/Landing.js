@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import Signup from '../Signup/Signup';
 import Community from '../Community/Community';
 import Conversation from '../Conversation/Conversation';
-import Threats from '../Threats/Threats';
 import About from '../About/About';
 import TryApp from '../TryApp/TryApp';
 import Social from '../Social/Social';
@@ -21,7 +20,6 @@ export default function Landing() {
                 <TryApp />
                 <Community />
                 <Conversation />
-                <Threats />
                 <Signup />
             </div>
         </div>
