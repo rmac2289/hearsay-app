@@ -1,135 +1,109 @@
-import TokenService from '../services/token-service';
-import config from '../config';
+import TokenService from "../services/token-service";
+import config from "../config";
 
 const DiscussionApiService = {
   getDiscussions() {
     return fetch(`${config.API_ENDPOINT}/discussion`, {
-      headers: {
-      },
-    })
-    .then(response => {
-        if(!response.ok){
-            return response.json().then(e => Promise.reject(e))
-        }
-        return response.json();
-    })
+      headers: {},
+    }).then((response) => {
+      if (!response.ok) {
+        return response.json().then((e) => Promise.reject(e));
+      }
+      return response.json();
+    });
   },
   getTopics() {
     return fetch(`${config.API_ENDPOINT}/discussion/topics`, {
-      headers: {
-      },
-    })
-    .then(response => {
-        if(!response.ok){
-            return response.json().then(e => Promise.reject(e))
-        }
-        return response.json();
+      headers: {},
+    }).then((response) => {
+      if (!response.ok) {
+        return response.json().then((e) => Promise.reject(e));
+      }
+      return response.json();
     });
   },
   getDiscussion(discussionId) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
   getDiscussionComments(discussionId) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussionId}/comments`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
   postComment(topic_name, discussion_post) {
     return fetch(`${config.API_ENDPOINT}/discussion`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         discussion_post,
         topic_name,
       }),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
-  getReviews(){
+  getReviews() {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
-      headers: {
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+      headers: {},
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
-  getReview(reviewId){
+  getReview(reviewId) {
     return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
-  patchLikes(discussion_id,likes) {
+  patchLikes(discussion_id, likes) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussion_id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify({
-        likes
+        likes,
       }),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
   patchDislikes(discussion_id, dislikes) {
     return fetch(`${config.API_ENDPOINT}/discussion/${discussion_id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify({
-        dislikes
+        dislikes,
       }),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
 
-  postReview(state, department, nature, rating, comments, incident_date ){
+  postReview(state, department, nature, rating, comments, incident_date) {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         state,
@@ -139,13 +113,10 @@ const DiscussionApiService = {
         comments,
         incident_date,
       }),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      );
-  }
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
 };
 
 export default DiscussionApiService;
