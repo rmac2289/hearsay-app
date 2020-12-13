@@ -2,15 +2,15 @@ import React from "react";
 import "./Review.css";
 import moment from "moment";
 
-export default function Review(props) {
+export default function Review({ department, reviews }) {
   const scrollDown = () => {
     const element = document.getElementById("banner");
     element.scrollIntoView({ behavior: "smooth" });
   };
   // filter results so only reviews that match the selected department are rendered //
-  const filtered = props.department;
-  const reviewsList = props.reviews
-    .filter((review) => review.department === filtered)
+
+  const reviewsList = reviews
+    .filter((review) => review.department === department)
     .map((value, index) => {
       const incidentDate = moment(value.incident_date).format(
         "dddd, MMMM Do YYYY"

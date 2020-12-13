@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import "./WriteReview.css";
 import { Textarea, Input, Button } from "../../Utils/Utils";
 
-export default function WriteReview(props) {
+export default function WriteReview({
+  state,
+  onChangeState,
+  deptName,
+  onChangeDept,
+  handleAddReview,
+}) {
   const [setNature, setNatureState] = useState("");
   const [setComments, setCommentsState] = useState("");
   const [setRating, setRatingState] = useState("");
@@ -10,28 +16,28 @@ export default function WriteReview(props) {
   const [setDateDay, setDateDayState] = useState("");
   const [setDateYear, setDateYearState] = useState("");
 
-  function getNatureText(event) {
-    setNatureState(event.target.value);
+  function getNatureText(e) {
+    setNatureState(e.target.value);
   }
-  function getCommentsText(event) {
-    setCommentsState(event.target.value);
+  function getCommentsText(e) {
+    setCommentsState(e.target.value);
   }
-  function getRating(event) {
-    setRatingState(event.target.value);
+  function getRating(e) {
+    setRatingState(e.target.value);
   }
-  function getDateMonth(event) {
-    if (event.target.value.length < 2) {
-      setDateMonthState(`0${event.target.value}`);
+  function getDateMonth(e) {
+    if (e.target.value.length < 2) {
+      setDateMonthState(`0${e.target.value}`);
     } else {
-      setDateMonthState(event.target.value);
+      setDateMonthState(e.target.value);
     }
   }
-  function getDateDay(event) {
-    setDateDayState(event.target.value);
+  function getDateDay(e) {
+    setDateDayState(e.target.value);
   }
 
-  function getDateYear(event) {
-    setDateYearState(event.target.value);
+  function getDateYear(e) {
+    setDateYearState(e.target.value);
   }
   function reset() {
     setNatureState("");
@@ -44,11 +50,11 @@ export default function WriteReview(props) {
   const handleSubmit = (e) => {
     reset();
     const element = document.getElementById("Review");
-    e.preventDefault();
+    e.preDefault();
     const incidentDate = `${setDateYear}-${setDateMonth}-${setDateDay}`;
     const review_fields = {
-      state: props.state,
-      department: props.deptName,
+      state: state,
+      department: deptName,
       nature: setNature,
       rating: setRating,
       comments: setComments,
@@ -59,7 +65,7 @@ export default function WriteReview(props) {
     if (!review_fields) {
       return;
     }
-    props.handleAddReview(e, review_fields);
+    handleAddReview(e, review_fields);
     element.scrollIntoView({ block: "nearest", behavior: "smooth" });
   };
   const setMax = () => {
@@ -114,8 +120,8 @@ export default function WriteReview(props) {
               <strong>State</strong>
             </label>
             <Input
-              value={props.state}
-              onChange={props.onChangeState}
+              value={state}
+              onChange={onChangeState}
               className="reviewInput"
               type="text"
               name="state"
@@ -127,8 +133,8 @@ export default function WriteReview(props) {
               <strong>Department</strong>
             </label>
             <Input
-              value={props.deptName}
-              onChange={props.onChangeDept}
+              value={deptName}
+              onChange={onChangeDept}
               className="reviewInput"
               type="text"
               name="department"

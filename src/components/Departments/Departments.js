@@ -39,12 +39,12 @@ export default function Departments() {
       .catch((error) => console.error(error));
   }, []);
 
-  function selectChange(event) {
+  const selectChange = (event) => {
     setSelectState(event.target.value);
-  }
-  function deptSelectChange(event) {
+  };
+  const deptSelectChange = (event) => {
     setDeptSelectState(event.target.value);
-  }
+  };
 
   const states = Object.keys(Agencies.States);
   const stateList = states.map((value, index) => {

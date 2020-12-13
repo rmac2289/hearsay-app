@@ -16,7 +16,7 @@ import {
 } from "react-share";
 import "./Social.css";
 
-export default function Social(props) {
+export default function Social() {
   return (
     <section className="socialsection">
       <header className="friendsheader">

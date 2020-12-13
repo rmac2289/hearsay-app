@@ -1,48 +1,45 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Textarea, Button } from "../../Utils/Utils";
 
-export default class CommentForm extends Component {
-  state = {
-    discussion_post: "",
+const CommentForm = ({ current_topic, onPostSubmit }) => {
+  const [discussion_post, setDiscussionPost] = useState("");
+
+  const handleTextChange = (e) => {
+    setDiscussionPost(e.target.value);
   };
-  getInitialState = () => {
-    return { discussion_post: "" };
-  };
-  handleTextChange = (e) => {
-    this.setState({ discussion_post: e.target.value });
-  };
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const text = {
       date_created: new Date(),
-      discussion_post: this.state.discussion_post,
+      discussion_post: discussion_post,
       user_name: sessionStorage.getItem("username"),
-      topic_name: this.props.current_topic,
+      topic_name: current_topic,
     };
     if (!text) {
       return;
     }
-    this.props.onPostSubmit(e, text);
+    onPostSubmit(e, text);
   };
-  render() {
-    return (
-      <section>
-        <form className="commentForm" onSubmit={this.handleSubmit}>
-          <Textarea
-            type="text"
-            value={this.state.discussion_post}
-            placeholder="Say something..."
-            onChange={this.handleTextChange}
-          />
-          {this.props.currentTopic === "" ? (
-            <Button disabled type="submit">
-              post comment
-            </Button>
-          ) : (
-            <Button type="submit">post comment</Button>
-          )}
-        </form>
-      </section>
-    );
-  }
-}
+
+  return (
+    <section>
+      <form className="commentForm" onSubmit={handleSubmit}>
+        <Textarea
+          type="text"
+          value={discussion_post}
+          placeholder="Say something..."
+          onChange={handleTextChange}
+        />
+        {current_topic === "" ? (
+          <Button disabled type="submit">
+            post comment
+          </Button>
+        ) : (
+          <Button type="submit">post comment</Button>
+        )}
+      </form>
+    </section>
+  );
+};
+
+export default CommentForm;

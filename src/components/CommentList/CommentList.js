@@ -1,42 +1,41 @@
-import React, { Component } from "react";
+import React from "react";
 import Comment from "../Comment/Comment";
 import "./CommentList.css";
 import moment from "moment";
 
-export default class CommentList extends Component {
-  render() {
-    // filter posts to render only those that match the selected topic //
-    const posts = this.props.data;
-    const postList = posts
-      .filter((post) => post.topic_name === this.props.current_topic)
-      .map((value, index) => {
-        return (
-          <Comment
-            key={index}
-            values={value.id}
-            date={moment(value.date_created).format("dddd, MMMM Do YYYY")}
-            user={value.user_name}
-            text={value.discussion_post}
-            likes={value.likes}
-            dislikes={value.dislikes}
-          />
-        );
-      });
-    const sortedPosts = postList.sort(function (a, b) {
-      return a.props.values - b.props.values;
+const CommentList = ({ data, current_topic }) => {
+  // filter posts to render only those that match the selected topic //
+  const postList = data
+    .filter((post) => post.topic_name === current_topic)
+    .map((v, i) => {
+      return (
+        <Comment
+          key={i}
+          values={v.id}
+          date={moment(v.date_created).format("dddd, MMMM Do YYYY")}
+          user={v.user_name}
+          text={v.discussion_post}
+          likes={v.likes}
+          dislikes={v.dislikes}
+        />
+      );
     });
-    return (
-      <section>
-        <ul className="postList">
-          {sortedPosts.length < 1 ? (
-            <div className="choose">
-              <h3>Choose a topic above to see what others have to say!</h3>
-            </div>
-          ) : (
-            sortedPosts
-          )}
-        </ul>
-      </section>
-    );
-  }
-}
+  const sortedPosts = postList.sort(function (a, b) {
+    return a.props.values - b.props.values;
+  });
+  return (
+    <section>
+      <ul className="postList">
+        {sortedPosts.length < 1 ? (
+          <div className="choose">
+            <h3>Choose a topic above to see what others have to say!</h3>
+          </div>
+        ) : (
+          sortedPosts
+        )}
+      </ul>
+    </section>
+  );
+};
+
+export default CommentList;

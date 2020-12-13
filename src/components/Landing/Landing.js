@@ -6,7 +6,6 @@ import Community from "../Community/Community";
 import Conversation from "../Conversation/Conversation";
 import About from "../About/About";
 import TryApp from "../TryApp/TryApp";
-import Social from "../Social/Social";
 
 export default function Landing() {
   return (

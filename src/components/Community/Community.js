@@ -3,7 +3,7 @@ import "./Community.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../Utils/Utils";
 
-export default function Community(props) {
+export default function Community() {
   return (
     <section>
       <header>
