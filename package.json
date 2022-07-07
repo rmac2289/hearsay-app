@@ -16,7 +16,7 @@
     "date-fns": "^2.13.0",
     "espree": "^7.0.0",
     "history": "^4.10.1",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "prop-types": "^15.7.2",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
